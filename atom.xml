@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://telegrax.github.io</id>
+    <title>Telegrax</title>
+    <updated>2022-06-19T05:26:11.895Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://telegrax.github.io"/>
+    <link rel="self" href="https://telegrax.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://telegrax.github.io/images/avatar.png</logo>
+    <icon>https://telegrax.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, Telegrax</rights>
+    <entry>
+        <title type="html"><![CDATA[ 银行核心系统之账户体系]]></title>
+        <id>https://telegrax.github.io/post/yin-xing-he-xin-xi-tong-zhi-zhang-hu-ti-xi/</id>
+        <link href="https://telegrax.github.io/post/yin-xing-he-xin-xi-tong-zhi-zhang-hu-ti-xi/">
+        </link>
+        <updated>2022-06-19T04:52:58.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="银行核心系统之账户体系">银行核心系统之账户体系</h2>
+<p>银行账户作为存款人办理存、贷款和资金收付活动的基础，是社会资金运动的起点和终点。但随着互联科技的发展，货币支付的渠道和方式不断翻新，新兴的“账户体系”各具特色，在为社会带来前所未有的便捷高效外，也隐含着巨大风险。因此，完善账户系统有助于遏制金融诈骗、偷逃税款、洗钱等违法活动，降低银行机构经营风险，促进金融创新，保障市场经济健康发展。<br>
+之前与一些同行的交流，发现在核心系统中账户体系的建设，仍有较大的提升空间。可以根据客户当前状态、场景行为、服务渠道、产品类型，识别账户风险，匹配不同的安全措施和差异化的风险定价，构建场景化的生态型账户体系。<br>
+<strong>1、此文适合人群：</strong></p>
+<p>银行从业人员，IT架构师，业务分析师，想做存款模块和运营的同学。</p>
+<p><strong>2、此文解决问题：</strong><br>
+对新人来说，学习完后对系统账户体系的基本框架有初步认识，有助于个人业务能力的沉淀和提升。因为核心系统的产品、交易、核算都是由账户体系决定的，所以不了解账户体系则无从了解核算等流向；对职场人来说，如果你想最大化发挥账户作用、延伸账户使用领域、提高账户使用的粘性，或许本文能扩展思路。</p>
+<p><strong>3、此文分为三部分：</strong><br>
+一、账户体系的发展历程<br>
+二、账户体系的基本定义<br>
+三、构建生态型账户体系</p>
+<p>1<strong>账户体系的发展历程</strong></p>
+<p>我国银行账户体系以1994年10月人民银行出台《银行账户管理办法》为起点，以2005年6月在全国推广运行人民币银行结算账户管理系统为突破，以2015年12月央行发布的《关于改进个人银行账户服务加强账户管理的通知》为创新。历经20余年的改革发展、近年来一系列政策的落地，将过去近乎野蛮生长的国内互联网金融行业纳入监管范围，同时也对银行账户分类管理提出了具体操作要求。</p>
+<p>回顾银行账户体系发展，大致分4个阶段：萌芽期、探索期、规范期、成熟期。</p>
+<figure data-type="image" tabindex="1"><img src="https://img.zenme.run/img/202206191251109.jpg" alt="image3" loading="lazy"></figure>
+<p><strong>1）萌芽期：以“客户号”的概念开辟银行账户管理的新模式。</strong></p>
+<ul>
+<li>
+<p>1994年10月人民银行出台《银行账户管理办法》</p>
+</li>
+<li>
+<p>2005年6月在全国推广运行人民币银行结算账户管理系统</p>
+</li>
+</ul>
+<p><strong>2）探索期：第三方支付公司如雨后春笋般涌现“虚拟”账户。</strong></p>
+<ul>
+<li>2013年6月余额宝诞生，中国银行业真实的感觉到互联网企业的竞争</li>
+<li>2014年民生银行直销银行悄然上线，创新性推出弱实名电子银行账户，用于投资理财业务</li>
+<li>2015年底P2P平台跑路事件的爆发，为互联网金融行业敲响警钟，监管开始规范整治市场环境</li>
+</ul>
+<p><strong>3）规范期：为应对风险，监管机构对交易参与方进行了管控。</strong></p>
+<ul>
+<li>2015年12月25日，央行发布392号明文提出银行应建立银行账户分类管理机制，将个人银行账户分为I类、II类、III类账户，以明确II类账户的方式合规化弱实名账户的意义，并增加了III类户的分层管理及场景作用</li>
+<li>2015年12月28日，人行公告非银行支付机构网络支付业务管理办法（43号文）</li>
+<li>各家银行也在针对账户分类体系进行相关改造，I类账户沿用原有个人银行结算账户的标准，新增II类、III类账户，主要用于开拓直销银行业务及外部渠道的合作。同时人行一方面洗牌支付机构，一方面大力扶植中小银行，可以说是用心良苦。</li>
+</ul>
+<p><strong>4）成熟期：打造以Ⅱ、Ⅲ类账户为基干的网络金融账户体系。</strong></p>
+<ul>
+<li>中国人民银行关于印发《条码支付业务规范（试行）》的通知（银发〔2017〕296号）</li>
+<li>261号和302号文规范，目前个人银行账户应用体系已初步建成，通过分级服务设计，即满足降低银行服务门槛推进普惠金融发展</li>
+<li>关于改进个人银行账户分类管理有关事项的通知（银发〔2018〕16号），再进一步明确了网络支付账户、个人银行账户的市场定位</li>
+<li>从多方面因素来看，人民银行极大的便利了银行账户大力拓展发展自己的商户，大力以银行普惠金融的形式致力于小额高频场景</li>
+<li>后续，相信随着市场的不断变化，还会出台更为完善的监管明细，有效规范市场秩序<br>
+通过梳理监管脉络，我们不难发现，银行账户体系是伴随银行业向互联网化发展而来，也是传统金融逐步转型的必经之路；通过对银行账户和第三方支付账户的双轨并行化集中监管，能规范市场经济，能给消费者带来更安全、更便捷、更合规的服务；通过重点挖掘II、III类账户的价值，能扩大账户覆盖范围、更好的站稳市场。</li>
+</ul>
+<p><strong>名词百科</strong></p>
+<p><strong>账户：</strong> 是根据会计科目设置的，具有一定格式和结构，用于反映会计要素的增减变动情况及其结果的载体。</p>
+<p><strong>账号：</strong> 指用户在系统中的登录的凭证和个人信息。一个用户可以有多个帐号，一个账号可以有多个账户，比如活期账户，定期账户等。</p>
+<p><strong>支付账户经营范围：</strong> 不能申请基金销售、保险代理、融资租赁等金融牌照下经营相关金融业务，必须通过成立或者收购子公司的情况下进行，不得基于条码技术从事相关信贷业务。同样也是从事信贷、融资、理财、担保、信托、货币兑换等金融业务的其他机构，所以对比监管条文，是可以很明确的看到约束了支付机构的行为。</p>
+<p><strong>银行账户经营范围：</strong> 对银行II、III类账户人民银行无论从条码支付还是线上支付都没有进行约束。为地方性银行提供了全新的获客方式，避免了地方性银行因为业务单一引起的银行资本充足率不足，减少银行系统性风险，其次也是提高银行积极性，投身于金融科技的研发过程中，而非一直想着玩通道、各种非标。</p>
+<p>2<strong>账户体系的基本定义</strong></p>
+<p>账户体系的设计是整个核心系统的底层基础，是核心系统在基础金融服务的基础上，为个人及单位客户提供对于资金收、付、管的服务。账户体系定义所有的操作均以交易的形式发生，但从金融核心系统的发展来看，将由以交易或用户驱动转变为以移动化、体验化、场景化进行管理的账户体系。</p>
+<p><strong>1）账户分类</strong></p>
+<p>从内容上来说，可以分为资产类账户、负责类账户、权益类账户、成本类账户、损益类账户；从功能上来说，可以分为活期账户、定期账户、贷款账户；一般来说，账户按照客户类型可以分为个人账户、单位账户、同业账户。</p>
+<p>个人账户：是存款人凭个人身份证件以自然人名称开立的银行账户，用于办理个人转账收付或现金存取。人民币账户还可以分为Ⅰ类户、Ⅱ类户、Ⅲ类户，不同类别的个人银行账户有不同的功能和权限。</p>
+<p>单位账户：是公司为自身业务开展的需求而为自己设立的账户，如基本账户、一般账户、临时账户及专用账户。</p>
+<p>同业账户：是用于银行之间的资金往来，如资金划拨和结算，而相互开立的往来账户，一般称为跨系统资金划拨，其核算以“同业往来”科目往来账户清算。<br>
+<strong>名词百科</strong><br>
+<strong>Vostro account：</strong> 意思是同业存款，贵行帐，来帐，你方账户即来账，称对方银行在该行（我方）开立的账户。即他行在我行开立的账户。</p>
+<p><strong>Nostro account：</strong> 意思是存放在国外同业帐户，往帐，我方帐户，银行往来帐户，我行在对方银行开立的账户。即我行在他行开立的账户。注：在银行核心系统中，我行也会记录由他行保管的我行资产，便于进行对账。就好比我们把钱借给了别人，我们自己这边也要做个记录一样，只有当我们自己做的记录和对方的记录一致，我们才会放心。</p>
+<p><strong>联名账户：</strong> 由两个或两个以上（五个以下）个人客户共同开立，存款不受限制，支取须按约定方式办理的本外币个人活期结算账户或整存整取定期储蓄存款账户。有3大特点，一是共同管理，通过共同开立账户，满足客户共同管理资金的需求；二是共同使用，通过约定支取方式，实现对账户资金的合理支配；三是共同积累，约定账户资金共有方式后，实现对账户资金的共享。</p>
+<p><strong>2）账户组成</strong></p>
+<p>所有账户都包含四个方面：<br>
+<img src="https://img.zenme.run/img/202206191251075.jpg" alt="image4" loading="lazy"></p>
+<p>除此之外，核心系统还可以根据业务需要按交易渠道、交易金额、客户级别、存期等多个维度，设置不同的账户。</p>
+<p>账户还分为左方、右方两个方向，在借贷记账法下，其左方一律称为“借方”，其右方一律称为“贷方”。资产、成本、费用类账户借方登记增加额、贷方登记减少额；负债、所有者权益、收入类账户借方登记减少额、贷方登记增加额。账户中登记本期增加的金额，称为本期增加发生额；登记本期减少的金额，称为本期减少发生额；增减相抵后的差额，称为余额，余额按照时间不同，分为期初余额和期末余额。</p>
+<p>最后是各个行的账号编制规则都不相同，同一个银行内部也会因不同性质的账号，采取不同的账号编制规则。</p>
+<p>**3）账户与会计科目 **</p>
+<p>会计科目是形成账户的最基本元素，因为账户是按照规定的会计科目在账簿中对各项经济业务的分类、系统、连续记录的一种手段；每条会计科目对应一银行业务产品，因为账户与会计科目的关联是由产品参数配置完成的，通过账户的客户类型、账户属性、核算分类、境内外标志、货币、存期等属性，来确定事先规定分类核算的科目编号；划分产品与科目的对账关系后，可以通过对各种会计科目的整合建立综合帐务系统。</p>
+<p>例如：存入一笔人民币10000元的活期存款，系统可以通过账户的资料自动匹配到对应的一个会计科目，管理这笔存款。例如，境内个人活期存款、境外个人活期存款、境外外资企业保本理财产品存款、境内中资企业结构性存款...</p>
+<p><strong>名词百科</strong><br>
+<strong>综合账户系统</strong> 按会计科目进行核算，反映各科目的资金增减变化情况，可以分为科目日结单、总账、日计表。</p>
+<p><strong>科目日结单</strong> 是控制明细核算的发生额，记账凭证和轧平当天账务的工具；是对当天各科目的借贷方发生额及传票张数的汇总记录；是登记总账的依据。</p>
+<p><strong>总账</strong> 按科目设立；对借贷双方反映余额；本日余额应根据各分户账的借方、贷方余额，分别加计总数。</p>
+<p><strong>日计表</strong> 日计表是反映当天全部银行业务活动情况的会计报表，也是轧平当天全部银行账务的重要工具；表上各科目的本日发生额和余额，是根据总账各科目的当日借方和贷方发生额和余额得出的；科目借方发生额合计＝各科目贷方发生额合计；各科目借方余额合计＝各科目贷方余额合计。</p>
+<p><strong>银行会计科目</strong>是根据银行业务、国家经济财政法规、中央银行与金融机构、非金融机构，金融机构和非金融机构之间的经济业务往来设置的。</p>
+<p><strong>企业会计科目</strong>是根据一般企业一般运行规律设置的科目，但是它们的设置依据是相同，都是采用复式记账法，运用借贷平衡法计算的。</p>
+<p><strong>3）账户与介质及挂失</strong></p>
+<p>账户介质就是能证明、记录、核实账户内容的实体物，通常由产品参数定义产品允许配发的介质类型。如借记卡，定期存单，活期存折，定期存折等等够证明你账户内容的证据。</p>
+<p>既然聊到账户介质，就顺带聊聊挂失功能。定期存单、存折、卡、或者是账户密码遗失，都可以进行挂失。如果客户未带身份证或不方便到银行办理正式挂失，可以采用电话的方式先进行口头挂失，并在5日内办理正式挂失，否则口头挂失会正式失效。正式挂失时要提供身份证件，填写“挂失申请书”及存款日期、种类、户名、金额、账号等账户信息。</p>
+<p>介质（卡、存单、存折）正式挂失7天后，客户可到办理挂失的银行机构领取新凭证或取款；支票或汇票挂失后，付款行查明申请挂失的支票确未付款后，暂停支付，有效期为3天，3天期满未收到银行法院停止支付通知会自动失效（个人支票）；客户办理挂失手续后，又找到了原介质，可要求撤销挂失，持已挂失的介质、申请书等到挂失受理网点办理即可。</p>
+<p><strong>4）账户层次、主子关系、实体与虚拟关系</strong></p>
+<p><strong>A.以客户为中心的统一账户体系</strong></p>
+<p><img src="https://img.zenme.run/img/202206191251393.jpg" alt="image5" loading="lazy"><br>
+以客户号为主导，联系所有与客户相关的帐户信息，所有帐户共用唯一的客户信息。</p>
+<p>银行自身的帐务做为一类特殊的帐户，客户缺省为银行自身，在此称其为内部帐。帐户管理体系采用统一的多分户模式，不论对私对公，均采用客户帐号+款项代码(可理解为会计科目号)方式，以客户帐号做为面向外部客户的唯一形式，由系统内部管理其下的所有款项，使系统从底层基础支持多重帐户的管理，并可为每个款项建立与其他帐户的相关性，实现不同层次类别的帐户管理。</p>
+<p>客户帐号存储帐户的静态信息，是指面向客户，客户能够实际看到的帐号，也可以称为主帐号。例如：存折上打印的活期存款帐号、单位客户购买和签发支票时使用的用于结算的支票户帐号、储蓄卡卡号、一本通的主帐号、定期存单的帐号等。</p>
+<p><strong>B.最通用的账户结构模型</strong><br>
+<img src="https://img.zenme.run/img/202206191251024.jpg" alt="image6" loading="lazy"></p>
+<p>客户账号同上，是对外展示给客户使用的交易账号。记账账号也称作系统账号，是底层的实体账号，对应一笔具体的金额、控制计结息规则等。</p>
+<p>同一客户账号下可以有多个记账账号，一个记账账号只对应一个有效的客户账号。客户账号与客户账号之间可以维护各种关系，比如附属卡/单位卡/虚拟子帐号等。</p>
+<p><strong>C.虚拟子账户结构</strong><br>
+<img src="https://img.zenme.run/img/202206191251270.jpg" alt="image7" loading="lazy"><br>
+虚拟子账户是指对一个账户中的资金，因分类管理需要而设置的账簿，每个账簿有各自独立的余额和交易明细信息，但并不是会计核算处理的对象。</p>
+<p>虚拟子账户允许资金存入、支取、转账等，但核心不对其计提利息、也不结息。该账户体系的最大优点是支持对虚拟子账户的交易明细进行屏蔽，支持全部或部分字段屏蔽。</p>
+<p>例如：投标人通过各种途径（现存除外）向虚拟子账户缴纳保证金并hold住金额；公共资源交易中心检查交易明细，确认通过后对保证金金额进行释放；在开标前，可以对交易明细进行屏蔽，防止敏感信息泄露；在开标后，公共资源交易中心校验虚拟子账户信息，逐笔退还至原账户；子账户下的虚拟子账户发起退款明细查询交易并返回查询结果给公共资源交易中心，项目投标结束后，将子账户下对应的虚拟子账户所有余额都上划交易结算户，解除账户结构关系，并将虚拟户销户。</p>
+<p><strong>D.个人账户关系（借记卡为例）</strong><br>
+<img src="https://img.zenme.run/img/202206191252427.jpg" alt="image8" loading="lazy"><br>
+个人借记卡主要分为主卡、副卡、联名卡。</p>
+<p>主卡可以下挂活期子账户与定期子账户；副卡与主卡共用活期子账户，不能下挂定期子账户；联名卡共用主账户与子账户信息，卡号不相同。</p>
+<p>个人账户关系除上图外，可以设计为一张借记卡下关联多个主账户，默认一个主账户，允许更改卡下的默认主账户，还可以一个主账户配多张借记卡等。<br>
+...<br>
+...</p>
+<p>账户体系可以分为母虚子实、母实子虚、母实子实、多层级账簿，还可以按对公或对私、一本通、自贸区、结算户、非结算户进一步细分。</p>
+<p><strong>5）多层级账户对客展示</strong></p>
+<p><strong>A.登记交易明细</strong></p>
+<p>登记发起交易的介质号码（如：卡号、存折账号、对公账号、虚拟子帐号）、以及记账的实体账号（即：系统账号）。当作为交易对手信息登记时，仅登记介质号码（如：卡号、存折账号等），或者是客户账号（如客户号+交易币种序号，可以查出对应的系统账号，关键在于编码规则的设计）。</p>
+<p><strong>B.交易明细查询</strong></p>
+<p>输入子账号，则直接查询该子帐号的交易明细；如果介质栏位填卡号/账号，则查询该卡号/账号发起的交易明细；对于一卡多户的情形，如果仅输入卡号，则查询其默认账户的交易明细，如果要查询其他账户的交易明细，则需要制定具体账号；对于一户多卡的情形，如果仅输入卡号，则查询该卡号的交易明细，如果查询该卡下账户的交易明细，则需要制定具体账号。<br>
+...<br>
+...</p>
+<p>站在客户上来看，还有客户视图看到哪个层级、余额查询是否汇总余额等多个角度；从设计的角度上，不仅要考虑系统架构的适用性方面，而且要考虑逐步实现的步骤。所以，同样的业务处理，在不同的系统处理方式不一致。</p>
+<p><strong>6）如何路由确定账户信息</strong><br>
+<img src="https://img.zenme.run/img/202206191252579.jpg" alt="image9" loading="lazy"></p>
+<p>基于以上账户体系结构，系统需要提供账户路由构件或接口，供核心系统内或外围系统查询输入卡号/账号的账户属性，以及卡/账号关联的子帐号清单、账号关联的借记卡清单等功能。</p>
+<p>3<strong>构建生态型账户体系</strong></p>
+<p><strong>1）三类账户</strong><br>
+<img src="https://img.zenme.run/img/202206191252572.jpg" alt="image10" loading="lazy"><br>
+I类户是全功能账户，一般个人工资收入、大额转账、医疗养老保险、公积金等，该账户都满足；II类户类似于“钱包”，可以存取款、投资理财、消费缴费、转入转出等，有一定限额的要求；III类户类似“零钱袋”，仅用于小额交易，且账户余额不超过2000元，年累计限额5万元。<br>
+注意：银行通过电子渠道非面对面为个人开立Ⅱ、Ⅲ类户时，应当要求开户申请人登记验证的手机号码与绑定账户使用的手机号码保持一致。<br>
+轻松一刻<br>
+<strong>有人打了个有趣的比方：</strong> Ⅰ类账户就像是老婆用的，什么金融业务都能办；Ⅱ类账户就像是自己用的，只能投资理财缴费不能超额；Ⅲ类账户就像是给小孩用的，只能做一些小额支付。</p>
+<p>央行出台政策，一方面，满足银行创新需求，为消费者支付结算服务提供便利；坚持底线原则，落实银行账户实名制要求，实现账户风险隔离；保护消费者合法权益，指导消费者有效管理账户。另一方面，根据账户风险级别，提供个性化产品服务，由账户分级带动银行客户经营思路的转变，同时也为第三方支付提供支付结算、资金存管等服务。</p>
+<p>未来金额必然是金融与科技相结合的新型服务模式，传统金融从交易、账户、支付、投资等服务进行转型升级。而账户体系对银行经营管理的重要性、创新延展性、竞争主导型等方面都起着重要作用。因此，做好账户管理是每一个金融从业机构的必修课。</p>
+<p><strong>3）生态型账户体系</strong></p>
+<figure data-type="image" tabindex="2"><img src="https://img.zenme.run/img/202206191252734.jpg" alt="image11" loading="lazy"></figure>
+<p>生态型账户体系重点在于多维度的差异化。面向外部市场环境，需要产品创新灵活、易于融入生态场景、推出市场速度快、风险定价灵活；面向机构，需要对接方式灵活、安全稳健、资金托管、定制化服务；面向客户，需要功能多样、方便快捷、安全可靠、强调体验；面向内部业务合作，需要结构设计灵活、适应能力强、系统对接灵活且成本低、指标可量化。</p>
+<p><strong>3）智慧银行架构</strong></p>
+<figure data-type="image" tabindex="3"><img src="https://img.zenme.run/img/202206191252630.jpg" alt="image12" loading="lazy"></figure>
+<p>第一层是基础服务能力，重点打造核心银行、总账、信贷、理财、反洗钱、监管报送等一套传统银行服务能力；第二层是打造互联网化的金融与非金融服务能力，重点建设用户中心、在线支付平台、在线融资平台等互联网化金融服务平台；第三层是通过金融开发平台输出互联网化金融能力；第四层是实现与外部全生态场景的深度融合。</p>
+<p>生态型账户体系是用I类账户覆盖第一层基础金融服务建设过程，将牢靠的账户能力向上层延展，保障账户能力的伸缩性；重点用II、III类账户覆盖第二、三、四层能力，保证在安全可控的情况下，提高账户的灵活度及特色化程度，并结合第四层外部生态的变化，在监管范围内，创新账户，形成符合场景的账户结构与功能。</p>
+<p>4<strong>总结</strong></p>
+<p>选择账户体系，不能简单看流行性，没有不顾背景的所谓最佳账户体系。因为基于不同银行特定的商业环境，每种账户体系，都会有各自的优劣。所以，对于各行核心系统建设中对账户体系的选择，就如同找老婆，没有最好的，只有最合适的。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[星际争霸系列剧情介绍-来自维基]]></title>
+        <id>https://telegrax.github.io/post/xing-ji-zheng-ba-xi-lie-ju-qing-jie-shao-lai-zi-wei-ji/</id>
+        <link href="https://telegrax.github.io/post/xing-ji-zheng-ba-xi-lie-ju-qing-jie-shao-lai-zi-wei-ji/">
+        </link>
+        <updated>2022-06-19T02:52:45.000Z</updated>
+        <content type="html"><![CDATA[<p>莎拉！！凯瑞甘！！刀锋女王！！<br>
+<img src="https://img.zenme.run/img/202206191103817.jpg" alt="1338865615_1)" loading="lazy"></p>
+<h2 id="故事情节">故事情节</h2>
+<p>这一系列的游戏剧情发生在26世纪初期的<a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E6%99%AE%E9%B2%81%E6%98%9F%E5%8C%BA">克普鲁星区</a>（Korprulu Sector）——遥远的<a href="https://zh.wikipedia.org/wiki/%E9%93%B6%E6%B2%B3%E7%B3%BB">银河系</a>中心，讲述了三个种族之间的斗争。</p>
+<p>在任何游戏事件均未发生的亘古时期，一个名为“<a href="https://zh.wikipedia.org/wiki/Xel'Naga">萨尔娜迦</a>”（Xel'Naga）的种族曾经透过<a href="https://zh.wikipedia.org/wiki/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B">基因工程</a>先后改造了<a href="https://zh.wikipedia.org/wiki/Protoss">星灵</a>与<a href="https://zh.wikipedia.org/wiki/Zerg">异虫</a>，试图创造出“纯净的物种”。不幸的是，试验最终失败，并且萨尔娜迦几乎完全被异虫所消灭。在游戏剧情开始的数个世纪前，<a href="https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%83">地球</a>上的强权国际组织“<a href="https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%83%E8%81%94%E5%90%88%E7%90%86%E4%BA%8B%E4%BC%9A">地球联合理事会</a>”（United Earth Directorate）发动了一项殖民计划用以解决地球上严重的<a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E5%8F%A3%E9%81%8E%E5%A4%9A">人口问题</a>。但是殖民舰队的电脑在运行途中出现故障，使得舰队严重偏离航向，最终迫降在了星灵领域的边缘。失去了与地球的联络，他们建立了各自的殖民行星并迅速发展起了科技。由于对人类的行为与潜在的精神能力产生了兴趣，星灵悄悄地监视着这里的人类，保护他们免受未知的威胁。然而，为了同化并吸收人类潜在的精神能力，异虫感染了数颗人类行星，但随后被星灵焚毁了。</p>
+<h3 id="星际争霸">星际争霸</h3>
+<p>主条目：<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8_(%E6%B8%B8%E6%88%8F)">星际争霸 (游戏)</a></p>
+<p>《<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8_(%E6%B8%B8%E6%88%8F)">星际争霸</a>》的剧情开始于第一次异虫感染的几天之后。当时的统治政府“<a href="https://zh.wikipedia.org/w/index.php?title=%E6%B3%B0%E5%80%AB%E8%81%AF%E9%82%A6&amp;action=edit&amp;redlink=1">泰伦联邦</a>”（Confederacy of Man）由于同时遭受了异虫和星灵攻击而倍感恐慌。一支由<a href="https://zh.wikipedia.org/w/index.php?title=%E9%98%BF%E5%85%8B%E5%9C%96%E6%B4%9B%E6%96%AF%C2%B7%E8%92%99%E6%96%AF%E5%85%8B&amp;action=edit&amp;redlink=1">阿克图尔斯·蒙斯克</a>（Arcturus Mengsk）领导的反叛军“<a href="https://zh.wikipedia.org/w/index.php?title=%E5%85%8B%E5%93%88%E4%B9%8B%E5%AD%90&amp;action=edit&amp;redlink=1">克哈之子</a>”（Sons of Korhal）通过使用联邦的幽能科技将大量异虫吸引到了联邦的首都行星<a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E6%99%AE%E9%B2%81%E6%98%9F%E5%8C%BA">塔桑尼斯</a>上，最终推翻了联邦。趁着联邦摧毁的权力真空，蒙斯克建立了新的“<a href="https://zh.wikipedia.org/w/index.php?title=%E6%B3%B0%E5%80%AB%E8%87%AA%E6%B2%BB%E8%81%AF%E7%9B%9F&amp;action=edit&amp;redlink=1">泰伦帝国</a>”（Terran Dominion）。然而，在塔桑尼斯行星上的战斗中，蒙斯克抛弃了其部下<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8">莎拉·路易斯·凯瑞甘</a>使其为异虫所俘获并感染；这也导致了蒙斯克的另一个部下<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8">吉姆·雷诺</a>带领一支小型舰队离开了他。异虫将凯瑞甘带回了<a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E6%99%AE%E9%B2%81%E6%98%9F%E5%8C%BA">查尔行星</a>上的主巢穴并使其重生，随后开始与<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8">塔萨达</a>和<a href="https://zh.wikipedia.org/wiki/Protoss">黑暗圣堂武士</a><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8">泽拉图</a>交战。在刺杀一只<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%E6%AC%A1%E8%A6%81%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8">脑虫</a>的过程中，泽拉图不慎与<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8">主宰</a>产生了心灵链接并暴露了星灵的家园<a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E6%99%AE%E9%B2%81%E6%98%9F%E5%8C%BA">艾尔行星</a>的位置。主宰迅速发动了对艾尔的全面入侵，意图获取星灵的基因，借此将异虫进化成最完美的种族。由于塔萨达一直与黑暗圣堂武士合作，因此被秘密议会视为叛徒，但他仍然选择与泽拉图回到艾尔，试图说服议会唯有联合黑暗圣堂武士的力量才能击败主宰，之后在吉姆·雷诺以及<a href="https://zh.wikipedia.org/wiki/Protoss">圣堂武士</a><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8">菲尼克斯</a>的帮助下，于艾尔发动了对异虫的决战。最终，塔萨达驾驶旗舰，采用自杀式攻击，与强大的主宰同归于尽。</p>
+<h3 id="星际争霸惑星暴乱">星际争霸：惑星暴乱</h3>
+<p>主条目：<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%EF%BC%9A%E5%8F%9B%E4%B9%B1">星际争霸：叛乱</a></p>
+<p>讲述2504年，一个叫做勃朗特四号(Brontes IV)的人类殖民地被虫族血洗的惨剧。</p>
+<h3 id="星际争霸天降神罚">星际争霸：天降神罚</h3>
+<p>主条目：<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%EF%BC%9A%E6%8A%A5%E5%BA%94">星际争霸：报应</a></p>
+<p>讲述人类星灵异虫的三个英雄为了争夺可以统治全宇宙的阿古斯晶石(Argus Stone)而展开战斗的故事，这块神石源自140亿年前的前造物世纪，</p>
+<h3 id="星际争霸母巢之战">星际争霸：母巢之战</h3>
+<p>主条目：<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%EF%BC%9A%E6%AF%8D%E5%B7%A2%E4%B9%8B%E6%88%98">星际争霸：母巢之战</a></p>
+<p>在《<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%EF%BC%9A%E6%AF%8D%E5%B7%A2%E4%B9%8B%E6%88%98">母巢之战</a>》的剧情中，星灵的实质领导人变为泽拉图尔和<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8#Artanis">阿塔尼斯</a>。他们将幸存的星灵从艾尔撤到了黑暗圣堂武士的家乡<a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E6%99%AE%E9%B2%81%E6%98%9F%E5%8C%BA#Shakuras">莎库拉斯</a>上。在这里，他们最终寻觅到了Uraj和Khalis两块水晶。待所有星灵撤回一座<a href="https://zh.wikipedia.org/wiki/Xel'Naga">萨尔娜迦</a>神庙后，两块水晶释放了它们的能量，摧毁了星球上的一切——包括异虫，还有黑暗圣堂武士的家园。与此同时，地球联合理事会（UED）的远征舰队来到了科普卢星区，地球强大的军事力量摧毁了泰伦帝国并俘获了异虫新的主宰。但由于<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8#Samir_Duran">萨米尔·杜兰</a>的叛变导致未能俘虏蒙斯克大帝本人。这时，<a href="https://zh.wikipedia.org/wiki/%E8%8E%8E%E6%8B%89%C2%B7%E5%87%B1%E8%8E%89%E6%A0%B9">凯莉根</a>为了不让地球军控制科普卢星区以及重掌虫权，选择联合了雷诺、菲尼克斯和蒙斯克对地球联合理事会发动反攻，重新夺回了“泰伦帝国”首都<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8#Korhal">克哈行星</a>；在成功打击地球军后，没想到凯莉根却突然片面撕毁了同盟合作关系，杀死了蒙斯克的爱将<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8#Edmund_Duke">埃德蒙·杜克</a>将军以及星灵大将-菲尼克斯。这使得吉姆.雷诺再度离开了<a href="https://zh.wikipedia.org/wiki/%E8%8E%8E%E6%8B%89%C2%B7%E5%87%B1%E8%8E%89%E6%A0%B9">凯瑞甘</a>。随后，她胁迫泽拉图杀死了新生的主宰，使<a href="https://zh.wikipedia.org/wiki/%E8%8E%8E%E6%8B%89%C2%B7%E5%87%B1%E8%8E%89%E6%A0%B9">凯瑞甘</a>统治了全部的虫族。在这之后，她击败了星灵、残余的UED和帝国，成为了整个星区内最强大的力量。她本人亦登基为“刀锋女王”（Queen of Blades）。</p>
+<h3 id="星际争霸ii自由之翼">星际争霸II：自由之翼</h3>
+<p>主条目：<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8II%EF%BC%9A%E8%87%AA%E7%94%B1%E4%B9%8B%E7%BF%BC">星际争霸II：自由之翼</a></p>
+<p>在母巢之战结束几年后，对抗“泰伦帝国”毫无起色的吉姆·雷诺沦落在马尔萨拉行星 （Mar Sara）的一间酒吧。这时候吉姆的老友，泰凯斯·芬利突然出现，并自称与莫比斯基金会 （Moebius Foundation）达成交换条件，被释放出来帮助莫比斯基金会寻找分散的萨尔娜迦神器，并以莫比斯基金会会以高价购买神器为由邀请吉姆入伙。吉姆在缺乏资金发动更进一步的革命与行动的困境下，答应了泰凯斯协助他寻找神器的要求。吉姆在占领了当地泰伦帝国的矿厂后获取了第一个神器碎片。在等待撤离的同时，异虫却突然大举入侵马尔萨拉。吉姆与当地反叛军守候至马特·霍纳上将（Matthew Horner）与吉姆的旗舰海伯利昂号（Hyperion,中国大陆译名“休伯利安号”）撤离他们。在谈话之中，吉姆意识到凯瑞甘已带领异虫返回克普鲁星区并入侵许多“泰伦帝国”的核心世界。 (注:中国大陆服务器译名不同，为“泰伦帝国”)</p>
+<p>在获取神器碎片的途中，吉姆遇到了曾经的老战友：<a href="https://zh.wikipedia.org/w/index.php?title=%E6%BE%A4%E6%8B%89%E5%9C%96&amp;action=edit&amp;redlink=1">泽拉图</a>，<a href="https://zh.wikipedia.org/w/index.php?title=%E6%BE%A4%E6%8B%89%E5%9C%96&amp;action=edit&amp;redlink=1">泽拉图</a>给了吉姆一颗装有自身预言的伊翰水晶，警告吉姆刀锋女皇：<a href="https://zh.wikipedia.org/wiki/%E8%8E%8E%E6%8B%89%C2%B7%E5%87%B1%E8%8E%89%E6%A0%B9">凯瑞甘</a>绝不能死，一但<a href="https://zh.wikipedia.org/wiki/%E8%8E%8E%E6%8B%89%C2%B7%E5%87%B1%E8%8E%89%E6%A0%B9">凯瑞甘</a>死亡，整个宇宙将会陷入万劫不复的深渊。</p>
+<p>获取了神器碎片后，吉姆抵达会合点准备与莫比斯基金会的负责人会合，却也惊讶的发现莫比斯基金会的负责人是昔日死对头─阿克图洛斯‧蒙斯克的儿子：维勒安·蒙斯克王子。维勒安以能够使<a href="https://zh.wikipedia.org/wiki/%E8%8E%8E%E6%8B%89%C2%B7%E5%87%B1%E8%8E%89%E6%A0%B9">凯瑞甘</a>变回人类的方法作为交换，让雷诺突击队与自治联盟部队结盟借此完成自己的父亲所办不到的事：消灭虫族。最后双方同心协力在查尔星上启动已经组合完成的神器，用其强大的能量波杀死所有虫族。而在最后吉姆与其他队员进入洞穴，扶起被能量波净化而虚弱的<a href="https://zh.wikipedia.org/wiki/%E8%8E%8E%E6%8B%89%C2%B7%E5%87%B1%E8%8E%89%E6%A0%B9">凯瑞甘</a>时，泰凯斯终于露出了自己的本意：实际上他早跟阿克图洛斯达成了交易，只要杀死<a href="https://zh.wikipedia.org/wiki/%E8%8E%8E%E6%8B%89%C2%B7%E5%87%B1%E8%8E%89%E6%A0%B9">凯瑞甘</a>就能换取自由之身。但最终泰凯斯仍不想背叛自己的战友吉姆而故意制造出空档，使自己被吉姆当场射杀。</p>
+<h3 id="星际争霸ii虫群之心">星际争霸II：虫群之心</h3>
+<p>主条目：<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8II%EF%BC%9A%E8%99%AB%E7%BE%A4%E4%B9%8B%E5%BF%83">星际争霸II：虫群之心</a></p>
+<p>游戏情节围绕异虫的首领刀锋女王凯瑞甘展开，在《自由之翼》的结尾，<a href="https://zh.wikipedia.org/wiki/%E9%9B%B7%E8%AB%BE">雷诺</a>使用一个古老的<a href="https://zh.wikipedia.org/wiki/%E8%96%A9%E7%88%BE%E9%82%A3%E5%8A%A0">萨尔那加</a>神器终于击溃了异虫的进攻，将<a href="https://zh.wikipedia.org/wiki/%E8%8E%8E%E6%8B%89%C2%B7%E5%87%B1%E8%8E%89%E6%A0%B9">凯瑞甘</a>恢复成人类；失去了领袖人物的异虫破裂为数个虫群分布在<a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E6%99%AE%E9%B2%81%E6%98%9F%E5%8C%BA">科普卢星区</a>上，一个异虫的寄生女王扎加拉更是想取代凯瑞甘成为新的首领。</p>
+<p>王储瓦伦里安为了确定凯瑞甘有多少部分回复到人类，将凯瑞甘隔离在研究所内进行很多实验和调查，而吉姆‧雷诺陪伴在凯瑞甘左右并不时给予其重要的支持和鼓励。然而蒙斯克派幽灵诺娃偷袭了研究所，吉姆不幸被逮捕，蒙斯克随即对外宣称已经将吉姆处决。为此，凯瑞甘踏上对蒙斯克的复仇之路，又在泽拉图的引导下回到虫群的诞生地，再次变身刀锋女王，重掌虫群各势力，并在数日后救出被囚禁的吉姆。</p>
+<p>然而吉姆无法接受再次成为刀锋女王的凯瑞甘，却也无法下手杀死凯瑞甘，只得宣告两人分手。</p>
+<p>凯瑞甘为了削弱泰伦帝国的力量，登上了泰伦帝国的科学研究设施:天矛太空站，但是当她突破外层进入设施时，却见到了塔達林星灵、<a href="https://zh.wikipedia.org/w/index.php?title=%E6%B7%B7%E5%85%83%E9%AB%94_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)&amp;action=edit&amp;redlink=1">混合体</a>与莫比斯基金会的<a href="https://zh.wikipedia.org/wiki/%E8%96%A9%E7%B1%B3%E7%88%BE%C2%B7%E6%9D%9C%E8%98%AD">纳鲁德博士</a>，她发现纳鲁德博士其实就是<a href="https://zh.wikipedia.org/wiki/%E8%96%A9%E7%B1%B3%E7%88%BE%C2%B7%E6%9D%9C%E8%98%AD">杜兰</a>并与他战斗，当纳鲁德博士临死前声称他已经复活了<a href="https://zh.wikipedia.org/wiki/%E8%96%A9%E7%88%BE%E9%82%A3%E5%8A%A0">萨尔纳加</a>埃蒙。最后当凯瑞甘与异虫进攻克哈时，因为凯瑞甘使异虫部队按兵不动，让瓦伦里安疏散人民，吉姆看到后决定出动休伯利安号帮助凯瑞甘。在休伯利安号的支持下，凯瑞甘攻入皇宫，却不幸被蒙斯克使用神器压制了。关键时刻吉姆挺身而出将神器启动装置给破坏，让凯瑞甘得以处决蒙斯克。阿克图尔斯死后，凯瑞甘讨伐埃蒙的旅程展开了。</p>
+<h3 id="星际争霸ii虚空之遗">星际争霸II：虚空之遗</h3>
+<p>主条目：<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8II%EF%BC%9A%E8%99%9A%E7%A9%BA%E4%B9%8B%E9%81%97">星际争霸II：虚空之遗</a></p>
+<p>星灵最年轻的执政官阿坦尼斯集结所有响应圣堂武士号召的族人，组成史上最豪华的黄金舰队，进行收复母星艾尔的作战。决战前夕，被认为出卖母星导致艾尔沦陷于异虫的暗影圣堂武士泽拉图现身，警告阿坦尼斯须将焦点放在幕后魔王埃蒙身上，否则星灵难逃灭亡命运。虽然相信泽拉图所说，但阿塔尼斯仍将收复母星列为优先选项，等星灵收复母星的瞬间，埃蒙发动当初创造星灵时埋藏在星灵沟通精神网络 - 卡拉 - 内的木马，俘虏了所有倚靠卡拉沟通的星灵人心智。不需使用卡拉的泽拉图牺牲自己，切断了被俘虏的阿塔尼斯神经束，解放了阿塔尼斯；自责不已的阿塔尼斯率领未被埃蒙俘虏的同胞，驾驶传说中的方舟 - 亚顿之矛出逃。失去了整批舰队的阿塔尼斯，为了收复母星与解放被束缚的同胞，他必须与其他不遵从卡拉之道，被放逐的同胞合作，达成真正的星灵团结，避免星灵灭亡的命运。</p>
+<p>帝国指挥官吉姆雷诺，异虫女王莎拉凯瑞甘与达兰星灵大主教阿塔尼斯，受到不知名的力量召唤，前往宇宙最深沉之处决战堕落的萨尔纳加，星灵与异虫的造物主埃蒙。在那边，众人终于了解埃蒙的堕落与意图，同时间凯瑞甘也获得了他的天命，背负残杀数亿生灵的罪孽，转身成新生萨尔纳加，继续转动宇宙生命的轮回。</p>
+<h2 id="故事地点">故事地点</h2>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%9A%9B%E7%88%AD%E9%9C%B8II">星际争霸II</a>中的克普鲁星区<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E5%9C%96">星图</a>，包含了大多数剧情提及的行星。</p>
+<p>剧情皆发生在位于<a href="https://zh.wikipedia.org/wiki/%E9%93%B6%E6%B2%B3%E7%B3%BB">银河系</a>的<a href="https://zh.wikipedia.org/wiki/%E6%82%AC%E8%87%82">悬臂</a>边缘、距离<a href="https://zh.wikipedia.org/wiki/%E5%A4%AA%E9%98%B3%E7%B3%BB">太阳系</a>六万<a href="https://zh.wikipedia.org/wiki/%E5%85%89%E5%B9%B4">光年</a>的克普鲁星区（Koprulu Sector）。下表给出了本星区内的大部分<a href="https://zh.wikipedia.org/wiki/%E8%A1%8C%E6%98%9F">行星</a>的名称和中文译名。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E8%A1%8C%E6%98%9F">行星</a>名称</th>
+<th style="text-align:center">中文译名</th>
+<th style="text-align:center">环境</th>
+<th style="text-align:center">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Aiur">Aiur</a></td>
+<td style="text-align:center">艾尔行星</td>
+<td style="text-align:center">丛林（Jungle World）</td>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E7%A5%9E%E6%97%8F_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)">星灵</a>前主星</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Antiga_Prime">Antiga Prime</a></td>
+<td style="text-align:center">安提卡行星</td>
+<td style="text-align:center">丛林（Jungle World）</td>
+<td style="text-align:center">前<a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E6%97%8F_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)">泰伦</a>联邦殖民地</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Bhekar_Ro">Bhekar Ro</a></td>
+<td style="text-align:center">贝卡·洛</td>
+<td style="text-align:center">冰天雪地（Ice World）</td>
+<td style="text-align:center">一座<a href="https://zh.wikipedia.org/wiki/Xel'Naga">萨尔纳加</a>神庙所在地</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Braxis">Braxis</a></td>
+<td style="text-align:center">布莱克西斯</td>
+<td style="text-align:center">冰天雪地（Ice World）</td>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E6%97%8F_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)">人类</a>殖民地、大量星灵遗迹所在地</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Brontes">Brontes</a></td>
+<td style="text-align:center">勃朗蒂斯</td>
+<td style="text-align:center">丛林（Jungle World）</td>
+<td style="text-align:center">前<a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E6%97%8F_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)">泰伦</a>联邦主要行政区</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Char">Char</a></td>
+<td style="text-align:center">查尔行星</td>
+<td style="text-align:center">熔岩（Ash World）</td>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E8%9F%B2%E6%97%8F_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)">异虫</a>主巢穴所在地之一</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Chau_Sara">Chau Sara</a></td>
+<td style="text-align:center">赵·莎拉</td>
+<td style="text-align:center">丛林（Jungle World）</td>
+<td style="text-align:center">前<a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E6%97%8F_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)">泰伦</a>联邦边境殖民地</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Dark_Moon">Dark Moon</a></td>
+<td style="text-align:center">暗月行星</td>
+<td style="text-align:center">晨曦（Twilight）</td>
+<td style="text-align:center">未知</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Dylar">Dylar</a></td>
+<td style="text-align:center">戴勒行星</td>
+<td style="text-align:center">丛林（Jungle World）</td>
+<td style="text-align:center">前<a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E6%97%8F_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)">泰伦</a>联邦主要行政区</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Korhal">Korhal</a></td>
+<td style="text-align:center">克哈行星</td>
+<td style="text-align:center">沙漠（Desert）</td>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E6%97%8F_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)">泰伦</a>帝国首都行星</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Mar_Sara">Mar Sara</a></td>
+<td style="text-align:center">玛·莎拉</td>
+<td style="text-align:center">丛林（Jungle World）</td>
+<td style="text-align:center">前<a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E6%97%8F_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)">泰伦</a>联邦边境殖民地</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Moria">Moria</a></td>
+<td style="text-align:center">莫瑞亚行星</td>
+<td style="text-align:center">丛林（Jungle World）</td>
+<td style="text-align:center">资源富集，<a href="https://zh.wikipedia.org/w/index.php?title=%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%E6%94%BF%E6%9D%83%E5%88%97%E8%A1%A8&amp;action=edit&amp;redlink=1">凯-莫兰联军</a>驻地</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Nemaka">Nemaka</a></td>
+<td style="text-align:center">尼玛卡行星</td>
+<td style="text-align:center">未知</td>
+<td style="text-align:center">一座<a href="https://zh.wikipedia.org/wiki/Xel'Naga">萨尔纳加</a>神庙所在地</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Shakuras">Shakuras</a></td>
+<td style="text-align:center">夏库拉斯</td>
+<td style="text-align:center">晨曦（Twilight）</td>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/Protoss">黑暗圣堂武士</a>的主星</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Tarsonis">Tarsonis</a></td>
+<td style="text-align:center">塔桑尼斯</td>
+<td style="text-align:center">丛林（Jungle World） 城市（Installation）</td>
+<td style="text-align:center">前<a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E6%97%8F_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)">泰伦</a>联邦首都行星</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Tyrador">Tyrador</a></td>
+<td style="text-align:center">泰拉朵行星</td>
+<td style="text-align:center">未知</td>
+<td style="text-align:center">前<a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E6%97%8F_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)">泰伦</a>联邦主要行政区</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Zerus">Zerus</a></td>
+<td style="text-align:center">泽瑞斯行星</td>
+<td style="text-align:center">丛林（Jungle World）</td>
+<td style="text-align:center"><a href="https://zh.wikipedia.org/wiki/%E8%9F%B2%E6%97%8F_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)">异虫</a>的诞生之地</td>
+</tr>
+</tbody>
+</table>
+<h3 id="aiur">Aiur</h3>
+<p>艾尔行星是《<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8">星海争霸</a>》科幻宇宙中星灵的故乡[<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#cite_note-manual-13">13]</a>。星球上密布着森林；星灵是这里唯一的智能生命。一个远古的文明<a href="https://zh.wikipedia.org/wiki/Xel'Naga">萨尔纳加</a>曾经登上过这个星球并改造了星灵。然而后来星灵开始与萨尔纳加为敌，并且互相内战。在这段称作“万世浩劫”（Aeon of Strife）的时间中，星球遭受了极大的破坏。但随后星灵很快重建了他们的家园，并开始四处殖民。</p>
+<p>在《<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8">星海争霸</a>》的剧情中，艾尔行星始终是星灵的中心。这里最高议会（Protoss Conclave）统治著整个星灵社会。同时，由于萨尔纳加人留下的一块凯达琳水晶（Khaydarin Crystal）的力量，艾尔行星上存在着一个巨大的幽能矩阵——所有的星灵依靠它建立心灵链接获得能量（后迁至<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Shakurus">夏库拉斯</a>）。</p>
+<p>在第二章节中，<a href="https://zh.wikipedia.org/wiki/%E8%9F%B2%E6%97%8F_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)">异虫</a>入侵了艾尔行星。主宰甚至降临到了它的表面。但在随后的第三章节中，星灵顽强地与异虫抗争，并在最后关头通过领袖<a href="https://zh.wikipedia.org/wiki/%E5%A1%94%E8%90%A8%E8%BE%BE">塔萨达</a>的牺牲摧毁了主宰。在这场战斗中，超过70%的星灵牺牲。在<a href="https://zh.wikipedia.org/wiki/%E9%BB%91%E6%9A%97%E5%9C%A3%E5%A0%82%E6%AD%A6%E5%A3%AB">黑暗圣堂武士</a><a href="https://zh.wikipedia.org/w/index.php?title=%E6%BE%A4%E6%8B%89%E5%9C%96&amp;action=edit&amp;redlink=1">泽拉图</a>的建议下，幸存的星灵通过一座空间传送门（Warp Gate）撤回了黑暗圣堂武士的家园<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8%E7%B3%BB%E5%88%97#Shakurus">夏库拉斯</a>行星。</p>
+<p>《<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8II">星海争霸II</a>》中，艾尔依旧是一个荒凉的行星。异虫在行星上肆虐，漫无目的地行走。 与此同时，夏库拉斯上的许多星灵一直打算重返艾尔，重建他们一度辉煌的文明</p>
+<h3 id="antiga-prime">Antiga Prime</h3>
+<p>安提卡主星是游戏初期一个<a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E6%97%8F_(%E6%98%9F%E6%B5%B7%E7%88%AD%E9%9C%B8)">泰伦</a>联邦的殖民地。然而，这里的人民对联邦早已失去了信心，因此在克哈之子的帮助下发动了叛乱。<a href="https://zh.wikipedia.org/wiki/%E5%90%89%E5%A7%86%C2%B7%E9%9B%B7%E8%AF%BA">吉姆·雷诺</a>和<a href="https://zh.wikipedia.org/wiki/%E8%8E%8E%E6%8B%89%C2%B7%E5%87%AF%E4%B8%BD%E6%A0%B9">莎拉·凯丽根</a>协助了当地的人民消灭了联邦守军，并为克哈之子建立了基地</p>
+<p>然而随后大量的联邦军队赶来。<a href="https://zh.wikipedia.org/wiki/%E9%98%BF%E5%85%8B%E5%9B%BE%E5%B0%94%E6%96%AF%C2%B7%E8%92%99%E6%96%AF%E5%85%8B">阿克图尔斯·蒙斯克</a>命令凯丽根安放一座幽能发射器（Psi Emitter），吸引异虫来到行星上以消灭联邦。尽管心中反对，她还是照办了。异虫很快涌入了安提卡主星，摧毁了联邦的基地。柯哈之子趁机离开。随后，由<a href="https://zh.wikipedia.org/wiki/%E5%A1%94%E8%90%A8%E8%BE%BE">塔萨达</a>领导的星灵舰队来到安提卡主星上空，彻底“净化”了这颗星球。</p>
+<h3 id="bhekar-ro">Bhekar Ro</h3>
+<p><strong>贝卡·洛</strong>是一座冰封的行星，是一个人类边境殖民地，天气变化无常。</p>
+<h3 id="char">Char</h3>
+<p><strong>查尔</strong>是一颗不稳定的火山的星球，其上原本鲜有生命存在。在《星际争霸》的剧情中，查尔的环境险恶易守难攻，因此被异虫选为大本营的所在地，其地表与地底布满成千上亿的虫群，<a href="https://zh.wikipedia.org/wiki/%E8%8E%8E%E6%8B%89%C2%B7%E5%87%B1%E8%8E%89%E6%A0%B9">莎拉·凯瑞甘</a>也是于此被改造成刀锋女王。在游戏的开始阶段，异虫，星灵和人类在查尔上展开了零星的战斗。在黑暗圣堂武士泽拉图刺杀脑虫Zasz时，异虫主宰发现了艾尔的位置。主宰随即降临到艾尔星上发动进攻，而把凯瑞甘留在了查尔星上。</p>
+<p>在<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%EF%BC%9A%E6%AF%8D%E5%B7%A2%E4%B9%8B%E6%88%98">星际争霸：母巢之战</a> 的战役里，因为新生的主宰，查尔再次成为了战争的焦点。<a href="https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%83%E8%81%94%E5%90%88%E7%90%86%E4%BA%8B%E4%BC%9A">地球联合理事会</a>一度成功的挟持了主宰以为己用，但是稍后即被打败，而新生主宰也被凯瑞甘所威胁的黑暗圣堂武士给消灭。凯瑞甘随即获得了虫群的统治权并且从此以查尔作为异虫的主巢穴之一。</p>
+<p>在<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8II%EF%BC%9A%E8%87%AA%E7%94%B1%E4%B9%8B%E7%BF%BC">星际争霸II：自由之翼</a>的最终战役中，吉姆·雷诺率领游骑兵与王储瓦伦里安•蒙斯克合作入侵了查尔星，并且利用萨尔纳加神器净化了凯瑞甘，使其恢复了人类形态。</p>
+<h2 id="系列游戏">系列游戏</h2>
+<p>《星际争霸》的主要游戏系列包含了《星际争霸》的故事主线。这一系列的所有游戏都共用同一条时间线，即每一部游戏的剧情都由前一部承载而来。截至2009年7月，主要游戏系列包含了原版《<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8_(%E6%B8%B8%E6%88%8F)">星际争霸</a>》、官方资料片《<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%EF%BC%9A%E6%AF%8D%E5%B7%A2%E4%B9%8B%E6%88%98">星际争霸：母巢之战</a>》以及续集《<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8II%EF%BC%9A%E8%87%AA%E7%94%B1%E4%B9%8B%E7%BF%BC">星际争霸II：自由之翼</a>》。主系列中的游戏都是<a href="https://zh.wikipedia.org/wiki/%E5%8D%B3%E6%97%B6%E6%88%98%E7%95%A5%E6%B8%B8%E6%88%8F">即时战略类型</a>的，玩家通过控制三个种族的部队完成剧情关卡。</p>
+<p>除此之外，《星际争霸》系列还包括两部非官方资料片。这两部资料片同样基于原版时间线，重点讲述一些其他的人物和设定。与原版《<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8_(%E6%B8%B8%E6%88%8F)">星际争霸</a>》一样，它们也是即时战略类型的游戏。最后，游戏系列还包含一部正在开发的<a href="https://zh.wikipedia.org/wiki/%E5%8A%A8%E4%BD%9C%E5%86%92%E9%99%A9%E6%B8%B8%E6%88%8F">动作冒险游戏</a>《<a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E4%BA%89%E9%9C%B8%EF%BC%9A%E5%B9%BD%E7%81%B5">星际争霸：幽灵</a>》。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[今日父亲节2022-06-19]]></title>
+        <id>https://telegrax.github.io/post/jin-ri-fu-qin-jie-2022-06-19/</id>
+        <link href="https://telegrax.github.io/post/jin-ri-fu-qin-jie-2022-06-19/">
+        </link>
+        <updated>2022-06-19T02:07:29.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://img.zenme.run/img/202206191008636.gif" alt="fathers-day-2022-june-19-6753651837109444-law" loading="lazy"></figure>
+<p>谷歌日本的logo<br>
+看着好有感觉，想念家里的小棉袄了</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[NRA账户:账户体系、收付款、结售汇、融资+理财]]></title>
+        <id>https://telegrax.github.io/post/nra-zhang-hu-zhang-hu-ti-xi-shou-fu-kuan-jie-shou-hui-rong-zi-li-cai/</id>
+        <link href="https://telegrax.github.io/post/nra-zhang-hu-zhang-hu-ti-xi-shou-fu-kuan-jie-shou-hui-rong-zi-li-cai/">
+        </link>
+        <updated>2022-06-16T00:07:32.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="nra账户账户体系-收付款-结售汇-融资理财">NRA账户:账户体系、收付款、结售汇、融资+理财</h2>
+<p>NRA 账户为 Non-Resident Account 的简称，中文全称为“境外机构境内账户”，它是指境外机构按规定在境内银行开立的境内外汇账户，不包括境外机构境内离岸账户（OSA）和自由贸易账户。<br>
+自09年以来，随着金融创新产品的不断延伸，以及逐渐放开的账户管理政策，NRA已然成为国内银行向境外机构提供金融服务的香馍馍。跨境存贷款的汇价差以及贸易新业态的推成出新，也为NRA账户体系提供了更多市场空间。<br>
+<strong>本文框架</strong></p>
+<p>1.NRA账户性质<br>
+2.NRA账户开户流程<br>
+3. NRA账户收付款、年检和申报<br>
+4.NRA账户结售汇<br>
+5.NRA账户融资和利息<br>
+6. FT账户五种类型、划转规则、优势<br>
+<strong>NRA账户性质</strong></p>
+<p>NRA账户开户主体境外机构是指在境外（含香港、澳门和台湾地区）合法注册成立的机构。也包括经发改委、商务审批备案的境内企业在境外投资设立的全资附属企业或参股企业，即境外投资企业（简称ODI）。</p>
+<p><strong>如果没有做过ODI备案登记，实控人又是境内自然人的境外机构到底能不能开NRA账户</strong>？<br>
+这一直是个颇具争议的话题。部分银行在开户时仍以外汇局赋码为准。<br>
+最早是由国家外汇管理局于2009年7月13日发布的《国家外汇管理局关于境外机构境内外汇账户管理有关问题的通知》（汇发〔2009〕29号），允许境内银行为境外机构开立境内外汇账户，即为NRA账户，NRA账户也包括境外机构在中国境内银行开立的人民币账户，为了区别于境外机构境内外汇账户，境外机构境内人民币账户也称&quot;RMB NRA&quot;账户。第一次明确开户审核资料范畴的是《中国人民银行关于境外机构人民币银行结算账户开立和使用有关问题的通知》（银发〔2012〕183号）<br>
+(二)境内银行业金融机构应当采取措施对境外机构在境外合法注册成立的证明文件、在境内开展相关活动所依据的法规制度或者政府主管部门的批准文件等开户证明文件进行审核，确保开户证明文件的真实性、合规性和完整性，并据此出具境外机构在境内开立人民币银行结算账户的合法性审核书面声明并加盖签章。境外机构申请开立基本存款账户的，银行应当将合法性审核书面声明与境外机构的开户申请书、开户证明文件一并送中国人民银行当地分支机构审核。<br>
+银行可以通过其境外分支机构等其他机构采取合法、可靠的措施，协助审查境外机构身份及其开户证明文件的真实性、合法性。<br>
+——《中国人民银行关于境外机构人民币银行结算账户开立和使用有关问题的通知》（银发〔2012〕183号）<br>
+**注意！**境外机构在境内只能开立一个人民币基本存款账户。外币不存在基本户概念。<br>
+银发〔2012〕183号通篇没有涉及开户主体需要被穿透实际控制人为“外籍人”的身份问题。境内居民不出境，在境外设立机构的现象很普遍，况且除了注册费之外没有实际出资（投资）并不违反在境外设立机构的法律法规，或者以其为境外提供服务产生的合法所得留滞境外转入其境外机构产生的营业收入亦可正常缴税。<br>
+此外，依据《中国人民银行关于加强反洗钱客户身份识别有关工作的通知》（银发〔2017〕235 号 ）对开展非自然人客户的身份识别，受益所有人信息透明度，加强风险评估和分类管理，防范复杂股权或者控制权结构导致的洗钱和恐怖融资风险提出了具体要求。<br>
+<img src="https://img.zenme.run/img/202206160805190.png" alt="image2" loading="lazy"></p>
+<p>美国今年出了《国防授权法案》，对受益所有人识别规定作出了变革。美国指的受益所有人：<u>直接或间接通过任何合约、安排、关系或其他方式对机构实施实质性控制；或拥有、控制机构不少于25%的机构股权或者表决权的自然人。</u><br>
+据此推论，介于境外新设的非居民机构，在客户识别上存在“快设快出”的嫌疑，加之没有正常的经营业务发生，只是为了替境内居民“走款”，确实在反洗钱尽调以及“展业三原则”的尺度把握上给金融机构制造一定的困扰和顾虑。才有后来实际控人如果是境内自然人的，大多数银行提出必须有经发改委备案的ODI企业才可以开立NRA账户的要求。<br>
+<img src="https://img.zenme.run/img/202206160805333.png" alt="image3" loading="lazy"><br>
+<img src="https://img.zenme.run/img/202206160805347.png" alt="image4" loading="lazy"></p>
+<p><strong>NRA账户开户流程</strong></p>
+<p><strong>01</strong></p>
+<p><strong>特殊机构附码证申领</strong><br>
+需在开户前到外汇局申领特殊机构代码赋予通知书（类似于境内机构的组织机构代码证，仅做银行开户所用），然后提交注册证明资料原件及加盖公章的复印件。如已在其他银行开户并申领，但不慎遗失的，原则上需至原开户行进行补领。<br>
+<strong>注意，此时外汇局审核材料已经要求提供境外实控人的护照复印件。</strong><br>
+<strong>02</strong></p>
+<p><strong>NRA账户开户资料（以香港机构为例）</strong><br>
+<img src="https://img.zenme.run/img/image5-291.png" alt="image5" loading="lazy"><br>
+<strong>03</strong></p>
+<p><strong>银行NRA开户流程</strong><br>
+<img src="https://img.zenme.run/img/image6-299.png" alt="image6" loading="lazy"><br>
+<strong>注：以上所述NRA本外币账户均不包括境外机构境内离岸账户（OSA）。</strong><br>
+<img src="https://img.zenme.run/img/202206160805754.png" alt="image7" loading="lazy"><br>
+<strong>NRA收付款、年检和申报</strong></p>
+<p><strong>01</strong></p>
+<p><strong>人民币NRA收支</strong><br>
+**付款：**人民币NRA资金性质视同在境外，向境外的划转，以及NRA账户之间的划转，可以凭指令直接办理。人民币NRA同境内机构或境内个人之间的资金划转，参照外币NRA同类业务，银行进行背景资料审核。<br>
+**收款：**人民币NRA从境外收入资本项目人民币资金、跨境贸易人民币融资款项等，在办理收入业务时境内银行应对交易证明材料进行审核。人民币NRA从境外账户收入经常项目人民币资金，不属于跨境人民币结算概念，但若符合“跨境货物贸易、服务贸易、收益及经常转移等经常项目”的规定，银行按照展业三原则对交易的真实性进行认真审核后，仍可以办理。<br>
+<strong>另外需要注意的是人民币账户NRA可接收从境外同名账户汇入的人民币资金，但除另有规定外，从境外汇入的人民币资金不得购汇。</strong><br>
+<strong>02</strong></p>
+<p><strong>外币NRA收支</strong><br>
+**交易对手为境外或境外管理账户：**NRA外币账户资金性质视同在境外，在银行履行完反洗钱审查程序后，从境内外收汇、相互之间划转、与离岸账户之间划转或者向境外支付，境内银行可以根据客户指令直接办理。</p>
+<p><strong>交易对手为境内机构或境内个人账户</strong>：NRA外币账户资金与境内机构及境内个人资金的往来视同跨境，政策规定“由境内机构或个人提供正式交易背景材料，并国际收支申报”，并要求NRA同步提供证实交易背景真实性的材料。<br>
+<img src="https://img.zenme.run/img/202206160805803.png" alt="image9" loading="lazy"><br>
+<strong>03</strong></p>
+<p><strong>NRA账户的年检</strong><br>
+此外，当前国际、国内反洗钱合规要求日益趋紧，NRA严格意义上属于境外机构境内账户，因此各家银行为满足客户身份持续识别的管理要求，按照《中华人民共和国商业银行法》和《中国人民币银行结算账户管理办法》，都会要求客户配合进行账户年检，及时更新各类资料与信息，确保账户合法合规。</p>
+<p>**年检的主要程序：**账户资料有效性到期前，一般为每年的7月至9月，具体时间各行有所不同。境外机构首先需要去注册地相关机构办理存续年检手续，获取更新有效资料后再到开户银行进行账户年检，以确保银行账户可以持续正常使用。如果机构客户没有及时到注册地完成相应年检要求，会导致存续状态异常。如香港注册的机构，若未及时到香港注册处（国家机关）和香港特别行政区税务局Inland Revenue Department（IRD）办理年检手续，还有可能缴纳罚款。同时也会直接导致银行账户的使用受限（如冻结或清退）。<br>
+并且，由于NRA客户的注册地在境外，境内银行要核实资料及信息相对不易，因此往往会要求客户通过有资质的独立第三方（查册服务机构）来确认账户资料及信息的真实、有效性。<br>
+<img src="https://img.zenme.run/img/202206160805249.png" alt="image10" loading="lazy"><br>
+<strong>注：查册是指查册服务机构作为独立第三方，通过注册地官方登记机关或依注册地法律规定保管境外机构信息的机构调取备案文件，以确认该境外机构的注册及存续情况、股东、董事信息等。</strong><br>
+<strong>如有不清楚的可以联系笔者</strong><br>
+<strong>04</strong></p>
+<p><strong>国际收支申报</strong><br>
+<img src="https://img.zenme.run/img/202206160804221.png" alt="image11" loading="lazy"><br>
+<strong>“F”不代表不申报，是由交易对手方银行进行申报。</strong><br>
+<strong>NRA账户结售汇</strong></p>
+<p><strong>01</strong></p>
+<p><strong>人民币NRA购汇</strong><br>
+银行履行审核手续后，原则上可以购汇汇出。对于非居民合法拥有的人民币资金，境外机构有权兑回外币资金，因此审核的背景资料也会聚焦于人民币NRA资金来源的合法性。因存在离岸/在岸的汇率倒挂，要关注境外机构利用人民币NRA购汇的跨境套利行为。<br>
+<strong>02</strong></p>
+<p><strong>外币NRA结汇</strong><br>
+除汇发〔2017〕3号《关于进一步推进外汇管理改革完善真实合规性审核的通知》规定的“允许自由贸易试验区内境外机构境内外汇账户结汇。结汇后汇入境内使用的，境内银行应当按照跨境交易相关规定，审核境内机构和境内个人有效商业单据和凭证后办理”情况外，经外汇局批准，他其各类外币NRA目前均不得结汇。</p>
+<p>2021年6月4号，北京自贸试验区成功落地境外机构境内外汇账户（NRA）结汇业务。<br>
+<img src="https://img.zenme.run/img/202206160804684.png" alt="image12" loading="lazy"><br>
+至此，在已经获批的21个自贸试验区中一共<strong>10省4市</strong>自贸园区内注册的银行可为境外机构办理其境内外汇账户（外币NRA）结汇。<br>
+<img src="https://img.zenme.run/img/202206160804144.png" alt="image13" loading="lazy"><br>
+<strong>操作规程基本一致！</strong><br>
+<img src="https://img.zenme.run/img/202206160804373.png" alt="image14" loading="lazy"><br>
+<strong>NRA账户融资和利息</strong></p>
+<p><img src="https://img.zenme.run/img/202206160803258.png" alt="image15" loading="lazy"><br>
+<strong>01</strong></p>
+<p><strong>人民币NRA融资</strong><br>
+<img src="https://img.zenme.run/img/202206160803739.png" alt="image16" loading="lazy"><br>
+自2009年以来，中国人民银行强力推进人民币国际化，如试点地区企业能采用人民币NRA和NDF远期外汇交易进行人民币跨境结算，此举能帮助企业规避汇率风险，降低供应链成本，简化贸易流程，减少人民币汇率波动对企业所带来的不利影响。<br>
+<strong>无本金交割远期外汇交易（简称NDF）</strong>，主要用于实行外汇管制国家的货币，目前亚洲地区的人民币、韩元、新台币等货币的非本金交割远期交易非常活跃。无本金交割远期外汇交易由银行充当中介机构，供求双方基于对汇率看法（或目的）的不同，签订非交割远期交易合约，该合约确定远期汇率，合约到期时只需将该汇率与实际汇率差额进行交割清算，结算的货币是自由兑换货币（一般为美元），无需对NDF的本金（受限制货币)进行交割。主要交易品种是一年期和一年以下的品种。NDF的本质就是一种远期外汇交易，提前锁定购汇或售汇的成本，以达到避险或投机的目的。<br>
+**一是利用国内即期汇率水平与境外NDF远期汇率水平之间的差异获利。**由于人民币升值预期存在，以及在岸/离岸市场汇率差异，存在获利空间。<strong>二是利用境内外市场中本外币利率的差异获利。</strong><br>
+<strong>02</strong></p>
+<p><strong>外币NRA融资</strong><br>
+关于外币NRA融资方面监管政策有两部：<strong>一是《外汇管理条例》第二十条</strong>：“银行业金融机构在经批准的经营范围内可以直接向境外提供商业贷款。”**二是《跨境担保外汇管理操作指引》（汇发〔2014〕29号）**一文中，NRA账户存款可作为境内机构向境内商业银行申请融资的质押物，属于外保内贷范畴，并非境外机构融资行为。<strong>从法律意义上说，不存在外币NRA账户融资，账户不过是一个融资的载体。</strong><br>
+<img src="https://img.zenme.run/img/202206160804423.png" alt="image17" loading="lazy"><br>
+①NRA账户内资金纳入银行经营头寸统一运用，按规定缴存存款准备金，并帐管理<br>
+②对开户的非居民企业来讲，NRA账户资金性质视同在境外，与境外账户之间的划转可凭指令直接办理<br>
+③NRA账户资金与境内账户的往来视同跨境，境内的收款或者划款企业需要具备相应的跨境交易背景，并向银行提供真实性证明材料，再进行国际收支申报<br>
+④未经批准的外币NRA账户不得结汇，2017年的汇发3号文《关于进一步推进外汇管理改革完善真实合规性审核的通知》开放了自贸区NRA账户的结汇<br>
+其实，不论是人民币NRA或是外币NRA，融资形式基本趋同。大致分为外存NRA海外直贷、外存NRA内贷和内存NRA贷等，为避免各家银行叫法不同，明确此处的“外”和“内”都分别表示境外和境内，存单和融资币种均包含外币和人民币。</p>
+<p><strong>下面提供几种经典模式供大家理解，如果形成套利，纯属偶然。</strong><br>
+<strong>NRA 外存海外直贷</strong><br>
+<img src="https://img.zenme.run/img/202206160804489.png" alt="image18" loading="lazy"><br>
+<strong>NRA 外存内贷 外保内贷</strong><br>
+<img src="https://img.zenme.run/img/202206160804410.png" alt="image19" loading="lazy"><br>
+<strong>内存NRA贷</strong><br>
+<img src="https://img.zenme.run/img/202206160804199.png" alt="image20" loading="lazy"><br>
+<strong>内存海外NRA贷 内保外贷</strong><br>
+<img src="https://img.zenme.run/img/202206160804494.png" alt="image21" loading="lazy"><br>
+<strong>内存NRA贷 内保自贸贷</strong><br>
+<img src="https://img.zenme.run/img/202206160804372.png" alt="image22" loading="lazy"><br>
+<strong>（实际以各行授信为准）</strong><br>
+<strong>举一个栗子：</strong><br>
+某境内企业A在香港有一个关联机构B。A委托B在境外采购原材料，由于人民币升值预期，基本上所有的美元资产已经通过意愿结汇转换为人民币资产。现A只能对外支付人民币，但B的供应商不接受人民币支付结算。于是，由Ｂ在境内银行先开立人民币NRA，A再以预付货款名义汇入B的人民币NRA。B把该货款转存为人民币定期存款（大额存单或结构性)，并以该存款向银行全额质押申请美元贷款以信用证支付货款，同时续做NDF，锁定购汇成本。到期后，银行释放定期存款，以约定汇率兑入美元偿还银行贷款，交易结束。</p>
+<p>所以B机构收益为：人民币定期存款利率与美元贷款利率差＋境内即期汇率与境外NDF汇率差。<br>
+同时，A由于采用跨境人民币结算，不用进行外币汇兑付款降低了汇率波动风险，国内企业也无需进行货币兑换，免去了结售汇手续和兑换成本。<br>
+<strong>PS：应严厉打击违法套利行为，并且严厉杜绝银行配合企业构造贸易背景进行套利。</strong><br>
+<strong>03</strong></p>
+<p><strong>NRA账户利息</strong><br>
+①人民币NRA账户：可以存定期。<br>
+②外汇NRA账户：外汇利率已经放开，银企双方按商业原则办理。<br>
+③NRA账户存款利息是否需要纳税？<br>
+NRA账户存款利息性质上属于非居民在中国境内所得，需要缴纳所得税。非居民在境内没有机构，其存款利息所得纳税缴纳实行源泉扣缴，扣缴义务人为银行。<br>
+NRA账户收取的利息是100%入账的。非居民机构在银行开户时，银行应提示申请人账户利息所得需要承担纳税义务，但如果不能在源头扣缴并差额入账，事后追索方式下银行实际面临了潜在的税务和资金风险。正是基于这一点，在NRA账户的准入上，需要关注境内投资机构的资质。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[VPS修改使用root及密码登录]]></title>
+        <id>https://telegrax.github.io/post/vps-xiu-gai-shi-yong-root-ji-mi-ma-deng-lu/</id>
+        <link href="https://telegrax.github.io/post/vps-xiu-gai-shi-yong-root-ji-mi-ma-deng-lu/">
+        </link>
+        <updated>2022-06-12T05:30:20.000Z</updated>
+        <content type="html"><![CDATA[<p>对于Oracle Google云等vps可以在切换为root后使用以下代码：</p>
+<pre><code>echo root:修改为自己密码 |sudo chpasswd root
+
+sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config;
+
+sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config;
+
+sudo service sshd restart
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[今日美图2022-06-12]]></title>
+        <id>https://telegrax.github.io/post/jin-ri-mei-tu-2022-06-12/</id>
+        <link href="https://telegrax.github.io/post/jin-ri-mei-tu-2022-06-12/">
+        </link>
+        <updated>2022-06-12T02:21:12.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://img.zenme.run/img/98922201_p0.png" alt="98922201_p0" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://img.zenme.run/img/98921186_p0.jpg" alt="98921186_p0" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://img.zenme.run/img/98921171_p0.jpg" alt="98921171_p0" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[保理业务模式 3个案例]]></title>
+        <id>https://telegrax.github.io/post/bao-li-ye-wu-mo-shi-3-ge-an-li/</id>
+        <link href="https://telegrax.github.io/post/bao-li-ye-wu-mo-shi-3-ge-an-li/">
+        </link>
+        <updated>2022-06-12T02:16:14.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="保理业务模式-3个案例">保理业务模式 3个案例</h2>
+<p><strong>本文纲要</strong><br>
+一、保理概述<br>
+二、正向保理案例<br>
+三、反向保理案例<br>
+（1）地产ABS<br>
+（2）非地产ABN</p>
+<p>一、保理概述<br>
+保理，是指贸易和服务合同项下的债权人（卖家或服务提供方），将其享有的现在或将来的应收账款转让给保理商，由保理商提供应收账款预付款（贸易融资）、分户账管理、账款催收、承担坏账风险等一项或多项的信用管理服务。<br>
+<strong>（1）按照业务主体分类分为银行保理和商业保理。</strong><br>
+对于商业保理来说，资金实力不如银行，优质应收账款资产基本也被银行做了，因此从经营方向上，如何发挥自身的优势，挖掘银行无法涉及的领域显得十分重要。<br>
+<strong>（2）按照是否通知债务人分为明保理和暗保理。</strong><br>
+暗保理业务就是债权人在不告知债务人的情况下将应收账款转让。暗保理因为没有通知到债务人，卖方有伪造合同、单据的可能，而且回款账户还是卖方原指定的账户，需要保理商重点关注。<br>
+<strong>（3）按照是否追索债权人分为有追索权保理和无追索权保理。</strong><br>
+有追索权保理的可以让债权人偿还资金或让债权人回购资金。<br>
+<strong>（4）按照信用风险审查对象不同分为正向保理和反向保理。</strong><br>
+反向保理业务因为由债务人发起，首先就解决了确权的问题，贸易背景的真实性也较容易核查，核心企业的还款能力也有所保障。</p>
+<p>二、正向保理案例<br>
+保理资产证券化发端于正向保理业务，首单保理资产证券化项目是由摩山保理作为原始权益人于2015年在上交所发行的，底层基础资产均为存量的保理债权。<br>
+正向保理中，保理商在审核和评估业务风险时将债权人的资信水平作为重点审查内容之一，中小型供应商因为自身规模小、信用评级不高，往往需要承担较高的保理费用；然而，下游客户却可能是资信水平较高的大型企业，保理商的风险明显降低，因此，基于应付账款的反向保理模式近年来得以发展起来，较多保理公司将开展反向保理业务作为其业务调整的方向。目前保理公司开展的保理资产证券化业务，亦以反向供应链金融资产证券化业务为主。<br>
+205号文对保理公司业务监管指标设置了10倍业务杠杆，即风险资产不得超过净资产的10倍，正向保理基础资产通常带有追索权，无法出表，发行规模容易受限。<br>
+（一）案例：摩山保理四期ABS<br>
+<strong>1、产品要素</strong><br>
+融资规模：14.7亿元；其中优先级13.96亿元、次级0.74亿元（5%）<br>
+信用评级：优先级AA+（联合信评）<br>
+基础资产：保理融资债权及其附属担保权益<br>
+增信措施：优先次级分层/差额支付承诺/加速清偿事件/提前终止事件<br>
+<strong>2、主要参与人</strong><br>
+原始权益人/资产服务机构/差额支付承诺人：摩山保理<br>
+管理人/销售机构：恒泰证券<br>
+<strong>3、基础资产定义</strong><br>
+基础资产为保理应收账款，具体是指由原始权益人于专项计划设立日或循环购买日转让给管理人的原始权益人对融资人、债务人享有的保理融资债权及其附属担保权益。基础资产包括初始基础资产及新增基础资产。<br>
+初始资产池涉及原始权益人和1个融资人（卖方）签署的20笔保理融资合同。基础资产全部带有追索权，相当于多加了一道风险保障。截止封包日，资产池的保理融资债权总额约为15.14亿元（本金余额约为14.70亿元）。<br>
+<strong>4、基础资产池情况</strong><br>
+资产池本金余额14.70亿元<br>
+基础资产笔数 20笔<br>
+融资人数量 1<br>
+保理合同剩余期限 3个月以内：6.54亿元，3个月-6个月：8.16亿元<br>
+购销合同剩余期限6个月以内<br>
+基础资产账期较短，因此设置了循环购买机制，合格标准包括保理合同不存在权利瑕疵等设定。此外，如存量保理融资债权资产的未偿本金余额超过资产支持证券未偿本金余额的115%，则不再进行循环购买。<br>
+<strong>5、交易结构和交易流程</strong><br>
+<strong>（1）专项计划设立</strong><br>
+管理人（恒泰证券）设立专项计划，投资者认购资产支持证券，成为资产支持证券持有人。<br>
+<strong>（2）基础资产购买</strong><br>
+管理人将专项计划资金用于向原始权益人购买基础资产，即由原始权益人于专项计划设立日或循环购买日，将基础资产转让给专项计划。<br>
+<strong>（3）基础资产服务</strong><br>
+资产服务机构（摩山保理公司）为专项计划提供与基础资产及其回收有关的管理等服务。<br>
+<strong>（4）现金流监管</strong><br>
+监管银行监管资产服务账户、专项计划账户等的资金归集、回收款转付情况，由托管人对专项计划资产进行托管。回收款转付日划入专项计划账户足以支付期间利息等应付金额后，剩余资金全部用于循环购买。当发生任一差额支付启动事件时，差额支付承诺人（摩山保理公司）将差额资金划入专项计划账户。<br>
+<strong>（5）专项计划收益分配</strong><br>
+托管人根据管理人分配指令，进行专项计划费用的提取和资金划付，并将相应资金划拨至登记托管机构的指定账户用于支付资产支持证券本金和预期收益。<br>
+<img src="https://img.zenme.run/img/image2-89.png" alt="image2" loading="lazy"><br>
+（来源：摩山保理四期资产支持专项计划说明书）<br>
+三、反向保理案例<br>
+近年来，保理公司积极参与反向供应链金融资产证券化业务。首先保理商与雄厚实力、信誉良好的核心企业签订协议，由保理商为核心企业上游的供应商提供保理融资服务；然后供应商再和核心企业贸易的过程中形成应收账款，供应商持应收账款票据向保理商办理保理融资；最后当应收账款到期后，核心企业直接向保理商付款。<br>
+目前参与反向供应链金融业务的保理公司大体分为两类：一类为核心企业外部的专业提供资产证券化配套服务的保理公司（市场化保理公司）；另一类为核心企业内部的仅为核心企业发行资产证券化项目提供服务的保理公司（关联保理公司）。<br>
+2019年205号文：单一集中度（50%）、关联交易限制（40%）<br>
+（一）地产ABS<br>
+<strong>案例：2017平安证券-一方保理万科供应链金融10号资产支持专项</strong><br>
+<strong>1、产品概述</strong><br>
+供应链地产ABS基础资产是核心企业供应链应付款，指的是上游供应商或服务提供方向核心企业或其下属公司销售商品或提供服务等经营活动后产生的、以核心企业或其下属公司为付款方的应付款。<br>
+交易结构基于核心企业的信用，多用于AA+及以上房企。在整个交易结构中，保理商作为原始权益人和资产服务机构，起到资产归集、应收账款管理的功能，收取保理服务费；供应商作为债权人、融资人，可以提前拿到基础合同款项；核心企业及下属公司作为共同债务人，起到延长账期的功能。<br>
+<strong>2、主要参与人</strong><br>
+原始权益人/资产服务机构：深圳前海一方商业保理公司<br>
+核心企业：万科<br>
+计划管理人/销售机构：平安证券<br>
+<strong>3、项目要素</strong><br>
+**基础资产：**原始权益人出售予专项计划并交割完成的应收账款债权<br>
+**发行规模：**9.65亿元，无分层<br>
+<strong>共同债务人</strong>：万科下属公司因向各债权人采购建材贸易或工程承包/分保服务而产生的应付账款，并由万科股份通过出具《付款确认书》的方式作为入池应收账款债权的共同债务人。<br>
+<strong>信用评级</strong>：AAA（中诚信评估）<br>
+<strong>4、基础资产池情况</strong><br>
+未尝应收账款余额：10.18亿元<br>
+应收账款笔数：535笔<br>
+债权人数量：297个<br>
+债务人数量：176个<br>
+加权平均应收账款期限：12月<br>
+加权平均应收账款剩余期限：12月<br>
+<strong>5、交易结构和交易流程</strong><br>
+<strong>（1）基础法律关系及核心企业信用加入</strong><br>
+供应商（债权人）向核心企业的下属公司（债务人）提供货物买卖或工程承包/分包服务而享有底层贸易合同关系项下的应收账款债权。签合同的是核心企业的子公司，这时候它的母公司，核心企业就以债务加入进行信用加入，即核心企业出具付款确认函，成为共同债务人。<br>
+<strong>（2）保理法律关系形成</strong><br>
+保理公司（原始权益人）与多数供应商签订保理协议，一手交债权，一手交钱。保理公司实际上起到归集的作用，归集了前端297个供应商的应收账款债权。<br>
+<strong>（3）专项计划设立及基础资产购买</strong><br>
+管理人向投资者募集资金设立专项计划并发行资产支持证券，以认购资金向原始权益人购买基础资产。<br>
+<strong>（4）基础资产服务</strong><br>
+管理人委托资产服务机构负责应收账款的回收和催收及违约资产处置等管理工作。<br>
+<strong>（5）现金流监管</strong><br>
+监管银行在回收款转付日将基础资产产生的现金流划入专项计划账户，由托管人托管。<br>
+<strong>（6）专项计划收益分配</strong><br>
+管理人向托管人发出分配指令，支付本金和投资收益。<br>
+在交易结构完成之后，跟供应商已经没什么关系了。实际上是债务人原本欠供应商的钱，现在直接转给专项计划，同时核心企业以债务加入的方式，成为共同债务人。因为保理公司会承担着一定的不合格基础资产赎回的义务，房企供应链ABS的保理公司一般来说都是房地产企业的下属公司。所以供应链金融实际上跟信用债的区别非常小，所有的支付义务，都是源自于核心企业以及核心企业的关联方所产生的付款义务，因此这也是ABS的评级不可能突破企业评级的原因所在。<br>
+<img src="https://img.zenme.run/img/image3-130.png" alt="image3" loading="lazy"><br>
+（二）非地产ABN<br>
+<strong>案例：攀钢惠信供应链ABN</strong><br>
+<strong>1、电子凭证证券化的特殊性</strong><br>
+<strong>（1）应收账款确权和转让通知</strong><br>
+普通供应链ABN项目中，核心企业通过出具《付款确认书》书面文件的方式进行确权；案例中应收账款的确权工作在攀钢惠信平台进行，核心企业通过数字证书对记账凭证所载明的信息进行签名确权，确权后系统将记账凭证发送至关联供应商，由其登录攀钢惠信平台完成签收确认。<br>
+<strong>（2）逐级清分及风险缓释</strong><br>
+案例中交易基础资产回收资金并不直接从债务人账户划付至信托账户，而是将基础资产回收资金从债务人的攀钢惠信平台业务账户逐级清分划付至受托人的攀钢惠信平 台业务账户。因此，在逐级清分的过程中，入池资产回收资金与资产服务机构或任一 供应商平台业务账户资金存在一定混同风险。<br>
+风险缓释：如信托账户在应收账款债权到期日次日未收到应付款项的， 攀钢集团将于应收账款债权到期日后第二日将到期未付的应偿金额支付至信托账户。<br>
+<strong>2、主要参与人</strong><br>
+原始权益人/资产服务机构：深圳惠融诚通商业保理公司<br>
+核心企业/共同债务人：攀钢集团<br>
+发行载体管理机构：中融信托<br>
+<strong>3、项目要素</strong><br>
+**基础资产：**保理合同债权<br>
+**发行规模：**1.42亿元（优先级1.35亿元，次级0.07亿元）<br>
+<strong>产品期限</strong>：1年（前半年为循环期，每季度循环一次，最后半年为摊还期，到期一次性偿付本息）<br>
+<strong>共同债务人</strong>：万科下属公司因向各债权人采购建材贸易或工程承包/分保服务而产生的应付账款，并由万科股份通过出具《付款确认书》的方式作为入池应收账款债权的共同债务人。<br>
+<strong>信用评级</strong>：AAA（中诚信评估）<br>
+**增信措施：**内部增信：信用超额覆盖、优先/次级结构、不合格资产赎回、信用触发机制；外部增信：攀钢集团作为共同债务人；<br>
+<strong>4、基础资产池情况</strong><br>
+保理债权余额总计：1.50亿元<br>
+应收账款笔数：120笔（117笔货物贸易；2笔服务贸易；1笔工程承包）<br>
+债务人数量：6户（均为攀钢集团下属公司)<br>
+加权平均应收账款剩余期限：85天<br>
+加权平均合同期限：155天</p>
+<p><strong>5、交易结构及交易流程</strong><br>
+<strong>（1）基础资产的形成及核心企业信用加入</strong><br>
+供应商与攀钢下属公司进行货物贸易、服务贸易等等基础交易而享有应收账款债权，攀钢下属公司签发攀钢惠信平台账单（即“母单”）记载债权信息，由供应商签收并持有。攀钢集团对攀钢下属公司签发的母单的到期付款义务出具《付款承诺书》，成为共同债务人。<br>
+<strong>（2）保理法律关系形成。</strong><br>
+母单对应的债权可通过攀钢惠信平台在供应商链成员间转让，也可以向保理商转让以获得应收账款债权转让对价，最终由惠融保理受让该等应收账款债权。<br>
+<strong>（3）专项计划设立</strong><br>
+惠融保理拟作为发起机构，以其保理合同债权作为信托财产委托给中融信托，设立信托作为资产支持票据的发行载体，向资产支持票据投资者募集资金。<br>
+<strong>（4）基础资产服务</strong><br>
+中融信托委托资产服务机构负责应收账款的回收和催收及违约资产处置等管理工作。<br>
+<strong>（5）现金流监管</strong><br>
+中融信托在资金保管机构开立财产权信托账户，对财产权信托资金进行保管。<br>
+<strong>（6）专项计划收益分配</strong><br>
+信托设立后，资产支持票据将在上清所登记和托管，中融信托按照相关信托文件的约定将信托利益分配给资产支持票据持有人，并委托上清所作为支付代理机构兑付票据收益。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[FT账户：融资、价格、全功能资金池 ]]></title>
+        <id>https://telegrax.github.io/post/ft-zhang-hu-rong-zi-jie-ge-quan-gong-neng-zi-jin-chi/</id>
+        <link href="https://telegrax.github.io/post/ft-zhang-hu-rong-zi-jie-ge-quan-gong-neng-zi-jin-chi/">
+        </link>
+        <updated>2022-06-11T00:36:12.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="ft账户融资-价格-全功能资金池">FT账户：融资、价格、全功能资金池</h2>
+<p>对企业而言，主要可开立两种账户：FTE及FTN账户。区内注册成立的企业可在自贸区内银行开立FTE账户，境外机构可在自贸区内银行开立FTN账户。主要FT账户的应用场景及优势总结如下：</p>
+<p>（一）FT账户融资</p>
+<p>适用企业：适用于希望获得低成本融资的企业，可在区内注册成立企业开立FTE账户，或境外企业在区内开立FTN账户，享受离岸优惠贷款利率。</p>
+<p>案例1：A公司注册在上海自贸区，A公司有人民币融资需求，融资期限3年，A公司比较了境内银行人民币贷款、境外银行人民币贷款以及FT账户人民币贷款成本后，最终选择在上海自贸区内试点银行开立了FTE账户，从银行借款1亿元人民币，FTE账户贷款利率相比境内银行人民币贷款节省了30BP，每年为企业节省融资成本30万元。</p>
+<p>FTE账户优势：（1）适用于离岸价格，相比于境内人民币贷款价格更具优势；（2）与企业从境外获得人民币融资相比，更加便捷高效，无需占用企业外债额度，无需办理外管局外债额度登记，在资金用途方面也无需遵照外管局关于资本项目境内支付使用的负面清单限制。</p>
+<p>案例2：B公司为境内公司在马来西亚设立的全资子公司，用于开拓境外市场，B公司马上有一笔银行5000万美元外币贷款即将到期，希望从银行获得低成本的外币贷款资金用于偿还即将到期的外币贷款资金。B公司在比较了境外银行外币贷款报价及境内银行外币贷款报价、FT账户外币贷款报价后，发现FT账户外币贷款报价最低。因此选择在广州自贸区开立FTN账户，由境内公司提供担保，办理了内保FT账户外币贷款业务，为企业每年节省了20BP外币贷款成本。</p>
+<p>FTN账户优势：适用于离岸价格，相比于境内银行海外直贷及境外银行外币贷款价格更具优势；且从放款流程方面，更加简单高效。</p>
+<p>（二）FT账户资金保值增值</p>
+<p>适用企业：适用于希望获得离岸存款利率、汇率的企业，可在区内注册成立企业开立FTE账户，或境外企业在区内开立FTN账户，享受离岸利率汇率。</p>
+<p>案例3：某独角兽企业C公司香港上市，对于境外上市公司暂时闲置的资金希望获得较高的资金回报。C公司比较了香港当地的外币存款报价、境内银行NRA账户外币存款报价以及自贸区银行FTN账户外币存款报价后，发现FTN报价最具优势，因此在自贸区银行开立了FTN账户，将境外暂时闲置的资金存放到FTN账户，获得较高的收益。</p>
+<p>FTN账户优势：适用于离岸存款价格，往往相比于境外银行报价及境内银行报价更具优势，对于境外企业闲置资金，可在自贸区银行开立FTN账户，实现资金增值。</p>
+<p>（三）FT账户项下全功能跨境双向人民币资金池</p>
+<p>1、适用企业：<br>
+生产或经营性跨国集团，境内企业走出去在境外设立子公司，或者境外来华设立子公司，希望实现跨境资金灵活调拨。营业收入或国际收支规模较低，无法满足全国版跨境资金池准入要求，可考虑搭建FT账户项下全功能跨境人民币资金池。<br>
+2、政策要点:<br>
+（1）准入要求：跨国企业集团应至少包含三家或以上的境内外生产及经营型成员企业，成员企业不得被列为跨境人民币重点监管企业名单内以及货物贸易外汇分类等级为 B、Ｃ类的企业。主办企业可以是区内注册成立的企业或是境外企业作为主办企业。此外，还应满足下述条件：</p>
+<ul>
+<li>境内成员企业不得为房地产企业或地方政府融资平台。</li>
+<li>境外成员企业不得为《关于进一步引导和规范境外投资方向的指导意见》中限制类、禁止类境外投资企业。<br>
+（2）资金划转及额度要求：一线放开、二线管住，跨二线（境内）只能以人民币。一线放开是指全功能型资金池支持境外成员企业与区内的主办企业之间或境外主办企业与区内成员企业之间自行选择货币进行资金归集。二线管住，跨二线（境内）只能以人民币是指境外主办企业或区内主办企业与境内区外成员企业之间只能以人民币进行资金归集。<br>
+人民币资金“二线”归集遵循跨境融资宏观审慎管理框架下的双向上限管理模式，即：跨境人民币资金净流出 （入） 额上限=资金池应计所有者权益*宏观审慎政策系数，宏观审慎政策系数为1。资金池应计所有者权益=境内成员企业上一年所有者权益*集团对成员企业控股比例加总。<br>
+<img src="https://img.zenme.run/img/202206110835662.png" alt="image1" loading="lazy"><br>
+（3）资金来源及用途要求：</li>
+<li>资金来源：参与全功能型资金池跨境资金归集的应为企业产生自生产经营活动和实业投资活动的现金流，外部融资产生的现金流暂不得参与归集。例如，不得来自银行借贷资金。</li>
+<li>资金用途：全功能型资金池账户用于满足集团内成员间的经营性融资需求、以保值增值为目标的财务管理需求、集团内及供应链上集中收付需求等，严格控制资金用于非自用房地产和股票市场投资。全功能型资金池可按有关规定进入境内相关市场开展投资，支持集团总部实现人民币资金在岸集约化管理。</li>
+<li>借贷期限：不能超过一年。</li>
+</ul>
+<p>案例4：D公司为加工制造企业，近年来加强国际化业务布局，在境外多个国家投资设厂，用于在当地进行采购加工。由于企业走出去时间较短，境外子公司主要处于投入运营阶段，产生的收入较少。境外需要大量的资金支持，但由于境外子公司运营时间较短，很难直接在境外获得低成本融资资金，因此D公司希望将自有资金借给境外子公司使用，用于支持境外子公司的生产运营。</p>
+<p>根据现有政策，D公司可以选择办理外管局单笔境外放款业务或者选择搭建跨境资金池。相比单笔境外放款业务，跨境资金池对客户更为便利，无需逐笔办理外管局境外放款额度登记。但由于境外公司成立年限较短，且营业收入、集团整体国际收支规模较少，无法满足全国版跨境资金池准入门槛，因此上海自贸区区内银行为D公司推荐了上海自贸区全功能型跨境人民币资金池。D公司选择由上海自贸区注册成立的企业作为主办企业，在上海自贸区银行开立了FTE账户作为主账户，搭建了全功能型跨境人民币资金池，通过跨境资金池放款给境外公司使用，支持了境外公司的业务发展。</p>
+<p>FT账户上海自贸区全功能跨境人民币资金池与全国版跨境资金池相比，有以下政策优势：<br>
+第一，准入门槛较低，对跨国集团无营业收入或国际收支规模的准入要求;<br>
+第二，可多币种归集境内、外资金，且可享受FT账户项下离岸利率、汇率价格优势；<br>
+第三，额度相对较高，主办企业FT账户与成员企业境内区外普通账户之间以人民币进行归集及划拨，额度是全国版跨境人民币资金池的一倍；<br>
+第四，跨国集团可选择境外企业作为主办企业，在区内开立FTN账户，无需到自贸区内新注册成立企业。<br>
+但相比全国版跨境资金池，上海自贸区全功能跨境人民币资金池资金不得来源于融资性资金，全国版跨境资金池未限制资金来源。因此全功能跨境资金池更适用生产或经营性跨国集团。</p>
+<p>延展</p>
+<p>目前境外机构可在境内开立的账户主要包括三类：OSA账户、NRA账户及FTN账户，主要对别如下：</p>
+<p>一、基本概念<br>
+1、OSA账户（OFFSHORE ACCOUNT，离岸账户）：是指境外机构按规定在依法取得离岸银行业务经营资格的境内银行离岸业务部开立的账户。目前取得资格的银行包括招行、交行、浦发、平安银行。<br>
+2、NRA账户（NON-RESIDENT ACCOUNT，在岸账户）：是指境外机构按规定在境内银行开立的账户。根据币种可开立人民币NRA账户或外币NRA账户。目前所有境内银行均可开立。<br>
+3、FTN账户（FREE TRADE NON-RESIDENT，境外机构自由贸易账户）：境外机构依法在上海市或者其他试点区域开展试验区分账核算业务的银行申请开立的境外机构自由贸易账户，目前自贸区经监管批准的区内试点银行可为境外机构开立FTN账户。<br>
+二、政策对比<br>
+1、币种不同：目前OSA账户只能存外币，不能人民币；FTN账户为本外币一体化账户；NRA账户可开立人民币NRA、外币NRA账户。<br>
+2、缴税不同：OSA账户属于离岸账户，无需缴纳账户利息所得税；FTN账户及NRA账户均需要缴纳。<br>
+3、账户利率不同：OSA账户参考的是国际金融市场利率；FTN账户可办理活期、定期及理财产品；NRA账户可以办理活期或定期存款，不可理财。<br>
+4、计入外债指标：目前OSA账户余额不纳入银行外债指标，外币NRA及FTN账户余额纳入，人民币NRA及FTN账户余额不纳入。<br>
+5、结售汇政策不同：OSA账户币种不能为人民币，不能办理结售汇，只能进行外汇买卖。FTN账户可使用离岸汇率办理结售汇及外汇买卖。NRA账户目前自贸区允许结汇后划入境内使用，且可办理外汇衍生品，但适用境内的汇率。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[今日美图2022-0610]]></title>
+        <id>https://telegrax.github.io/post/jin-ri-mei-tu-2022-0610/</id>
+        <link href="https://telegrax.github.io/post/jin-ri-mei-tu-2022-0610/">
+        </link>
+        <updated>2022-06-10T04:46:47.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://img.zenme.run/img/202206101250783.jpg" alt="98901156_p0" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://img.zenme.run/img/202206101251391.jpg" alt="98901156_p1" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://img.zenme.run/img/202206101251392.jpg" alt="98901156_p2" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[区分公有链、联盟链和私有链 ]]></title>
+        <id>https://telegrax.github.io/post/qu-fen-gong-you-lian-lian-meng-lian-he-si-you-lian/</id>
+        <link href="https://telegrax.github.io/post/qu-fen-gong-you-lian-lian-meng-lian-he-si-you-lian/">
+        </link>
+        <updated>2022-06-10T04:43:13.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="区分公有链-联盟链和私有链">区分公有链、联盟链和私有链</h2>
+<p>目前已知的区块链大致分为三类：</p>
+<p><strong>1、公共区块链</strong></p>
+<p>又称公有链，是指世界上任何人都可读取、发送交易进行有效性确认，任何人都能参与其共识过程（即维持区块链分布式数据一致性、准确性的关键技术）的区块链。</p>
+<figure data-type="image" tabindex="1"><img src="https://img.zenme.run/img/202206101242325.jpg" alt="image3" loading="lazy"></figure>
+<p>**公有链上的数据记录是公开的，任何节点无须任何许可便可随时加入或脱离网络，所有人都可以访问、发出交易请求，并通过验证被写入区块链。**共识过程的参与者通过密码学技术共同维护公共区块链数据的安全、透明、不可篡改。</p>
+<p>在公有链中，程序开发者无权干涉用户，可以保护使用他们开发程序的用户。所以，<strong>公有链被认为是“完全去中心化”的，它具备保护用户免受开发者的影响，访问门槛低，所有数据默认公开等特点。</strong></p>
+<p>国内外目前比较有名的公有链有：ONT本体、ETP元界、ADA（中文称艾达币）、比原链Bytom等。</p>
+<p>公有链是完全分布式的区块链，数据完全公开、用户参与程度高，同时易于产生网络效应，便于应用推广。然而，系统的运行需要依赖于内建的激励机制。</p>
+<p><strong>2、共同体区块链</strong></p>
+<p>**又称联盟链，是指有若干个机构共同参与管理的区块链，**每个机构都运行着一个或多个节点，其中的数据只允许系统内不同的机构来进行读写和发送交易，并且共同来记录交易数据。</p>
+<p><img src="https://img.zenme.run/img/202206101242326.jpg" alt="image4" loading="lazy"><br>
+联盟链上的数据可以是公开的也可以是内部的，属于部分意义上的分布式。</p>
+<p>比如有若干家金融机构之间建立了某个共同体区块链，每个机构都运行着一个节点，而且每个区块的生效至少需要获得其中10个机构的确认。区块链可以允许每个机构读取，或者只受限于共识验证参与者，或走混合型路线。例如区块的根哈希及应用程序接口对外公开，允许外界用来进行区块链数据和区块链状态信息查询等。</p>
+<p><strong>联盟链具备低成本运行和维护、高交易速度及良好的扩展性等特点。适合机构间的交易、结算或清算等B2B场景。它的典型应用包括超级账本（Hyperledger）、区块链联盟R3CEV等。</strong></p>
+<p>联盟链的参与节点间的链接状态较好、验证效率较高，只需较低的成本即可维持运行，同时还有很好的扩展性，数据可以保持一定的隐私性。但是这也意味着<strong>在共识达成的前提下，参与节点可以一起篡改数据。</strong></p>
+<p><strong>3、私有区块链</strong></p>
+<p><strong>即私有链，是指其写入权限由某个组织和机构控制的区块链</strong>，参与节点的资格会被严格限制，比如只限于特定机构的自身用户等，数据的访问及使用有严格的权限管理。如下图：</p>
+<figure data-type="image" tabindex="2"><img src="https://img.zenme.run/img/202206101242327.jpg" alt="image5" loading="lazy"></figure>
+<p>完全私有的区块链的写入权限仅在参与者手里，读取权限可以对外开放，也可以进行任意程度的限制。<strong>相关的应用囊括数据管理、数据库审计甚至公司管理，其典型应用有Eris Industries。</strong></p>
+<p>尽管在有些情况下希望私有链可以具有公共的可审计性，但在更多的情况下没有公共的可读性。<strong>由于是私有用户说了算，里面的数据没有无法篡改的特性，对于第三方的保障力度大大降低。</strong></p>
+<p>因此，目前很多私有链会通过依附在比特币等已有区块链的方式存在，定期将系统快照数据记录到比特币系统中。</p>
+<p>相比中心化数据库，私有链<strong>能够防止机构内单节点故意隐瞒或者篡改数据，即使发生错误，也能够迅速发现来源。</strong></p>
+<p>由于私有链验证者是内部公开的，所以并不存在部分验证节点共谋进行51%攻击的风险。**私有链的交易只需要被几个受信的高算力节点验证即可，而不是需要数万个节点的确认，因此交易成本低。</p>
+]]></content>
+    </entry>
+</feed>
